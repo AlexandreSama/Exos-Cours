@@ -20,14 +20,6 @@ body {
   padding-left: 40px;
 }
 
-a:visited,
-a {
-  text-decoration: none;
-  color: black;
-  display: inherit;
-  height: 100%;
-}
-
 /* HEADER */
 header {
   display: flex;
@@ -36,7 +28,7 @@ header {
 }
 nav {
   display: inherit;
-  flex-direction: row;
+  flex-direction: row-reverse;
   height: 20%;
 }
 .figNav {
@@ -114,7 +106,6 @@ article {
 .imgTitleArticle {
   width: 3%;
   position: relative;
-  top: 7px;
 }
 .textArticle {
   padding-top: 15px;
@@ -238,12 +229,16 @@ footer {
   .nav-links,
   input[type="checkbox"] {
     display: none;
+    height: 0;
   }
+
   .burger {
     position: relative;
     cursor: pointer;
     left: -1%;
+    z-index: 2;
   }
+
   .burger div {
     width: 25px;
     height: 3px;
@@ -251,19 +246,40 @@ footer {
     margin: 5px;
     border-radius: 3px;
   }
-  input[type="checkbox"]:checked ~ .nav-links {
+
+  .navButtons input[type="checkbox"] {
+    height: 10%;
+  }
+
+  input[type="checkbox"]:checked ~ .navButtons > .nav-links {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    background-color: white;
+    background-color: #000000bf;
+    height: 100vh;
   }
+  input[type="checkbox"]:checked,
+  .navButtons {
+    height: 100vh;
+    width: 95%;
+    z-index: 1;
+    position: absolute;
+  }
+  .linksNav {
+    text-decoration: none;
+    color: #ff66fa;
+    display: inherit;
+    height: 100%;
+  }
+
   li {
     padding-bottom: 20px;
   }
   .ghostDiv {
     text-align: center;
     top: -14%;
+    z-index: 0;
   }
   .imgTitleArticle {
     width: 20%;
