@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caisse</title>
+</head>
+<body>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+
+</body>
+<script>
+    var E = 1
+    var somdue = 0
+    var M
+    var Reste
+    var Nb10E
+    var Nb5E
+
+    let result = document.getElementById('result1')
+    let result2 = document.getElementById('result2')
+    let result3 = document.getElementById('result3')
+
+
+    // This code is a simple program that calculates the change to be given back to a customer after
+    // they have paid for a purchase. 
+    while (E != 0) {
+        E = parseInt(prompt('Entrez un nombre : '))
+        somdue = somdue + E
+    }
+
+    alert('Vous devez ' + somdue + ' euros')
+    M = parseInt(prompt('Montant versé : '))
+    Reste = M-somdue
+    Nb10E = 0
+
+    while (Reste >= 10) {
+        Nb10E = Nb10E+1
+        Reste = Reste - 10
+    }
+
+    Nb5E = 0
+    if(Reste >= 5){
+        Nb5E = 1
+        Reste = Reste - 5
+    }
+
+    result.innerHTML += 'Billet de 10 E : ' + Nb10E
+    result2.innerHTML += 'Billet de 5 E : ' + Nb5E
+    result3.innerHTML += 'Pièces de 1 E : ' + Reste
+</script>
+</html>

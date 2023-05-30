@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tout'A'Vendre</title>
+</head>
+<body>
+    <h1>Formulaire de facture</h1>
+    <p>Prix net HT</p>
+    <input type="number" placeholder="PrixHT" id="iPrixHT">
+    <p>Quantité</p>
+    <input type="number" placeholder="Quantité" id="iQTT">
+    <p>Remise de prix</p>
+    <input type="checkbox" name="remise" id="iRemise" placeholder="Remise">
+    <p>Frais de livraisons</p>
+    <select name="iFrais" id="iFrais">
+        <option value="10">Code 1</option>
+        <option value="20">Code 2</option>
+        <option value="30">Code 3</option>
+        <option value="0">Code 4</option>
+    </select>
+    <p>Valider la facture</p>
+    <button type="submit" id="submit">Valider</button>
+    <h2>Résultat</h2>
+    <p id="PrixHTOut"></p>
+    <p id="remiseOut"></p>
+    <p id="fraisOut"></p>
+    <p id="TVAout"></p>
+    <p id="TTCout"></p>
+    <p id="QTTout"></p>
+    <p id="Netout"></p>
+</body>
+<script>
+    document.getElementById('submit').addEventListener('click', () => {
+
+        //On récupère tout les inputs
+        let iPrixHT = Number(document.getElementById('iPrixHT').value)
+        let iQTT = Number(document.getElementById('iQTT').value)
+        let iRemise
+        if(document.getElementById('iRemise').checked){
+            iRemise = 10
+        }else{
+            iRemise = 0
+        }
+        let iFrais = Number(document.getElementById('iFrais').value)
+        let TVA = 19.6
+
+        //On récupère tout les outputs
+        let prixHTOut = document.getElementById('PrixHTOut')
+        let remiseOut = document.getElementById('remiseOut')
+        let fraisOut = document.getElementById('fraisOut')
+        let TVAout = document.getElementById('TVAout')
+        let TTCout = document.getElementById('TTCout')
+        let QTTout = document.getElementById('QTTout')
+        let Netout = document.getElementById('Netout')
+
+        //On calcule le montant de la TVA
+        let montantTVA = iPrixHT * TVA / 100
+        console.log(montantTVA)
+
+        //On calcule le prixTTC
+        let prixTTC = Number(iPrixHT) + montantTVA
+        console.log(prixTTC)
+
+        //On calcule le prix Total
+        let prixTotal
+        if(iQTT == 0){
+            prixTotal = prixTTC * 1 - iRemise + iFrais
+        }else{
+            prixTotal = prixTTC * iQTT - iRemise + iFrais
+        }
+
+        //Et on envoi le résultat
+        TVAout.innerHTML = 'Montant de la TVA : ' + Math.round(montantTVA) + '€'
+        TTCout.innerHTML = 'Prix TTC : ' + Math.round(prixTTC) + '€'
+        prixHTOut.innerHTML = 'Prix HT : ' + Math.round(Number(iPrixHT)) + '€'
+        QTTout.innerHTML = 'Quantité : ' + iQTT
+        Netout.innerHTML = 'Prix Net : ' + Math.round(prixTotal) + '€'
+        fraisOut.innerHTML = 'Frais de livraisons : ' + iFrais+ '€'
+        remiseOut.innerHTML = 'Remise : ' + iRemise + '€'
+
+    })
+</script>
+</html>

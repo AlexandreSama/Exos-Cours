@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chevaux</title>
+</head>
+<body>
+
+    <p id="result1"></p>
+    <p id="result2"></p>
+    
+</body>
+<script>
+    var N = parseInt(prompt('Entrez le nombre de chevaux partants : '))
+    var P = parseInt(prompt('Entrez le nombre de chevaux joués : '))
+    var I
+    var A = 1
+    var B = 1
+    let result = document.getElementById('result1')
+    let result2 = document.getElementById('result2')
+
+    // This is a for loop that calculates the value of A and B based on the values of N and P entered
+    // by the user. The loop runs P times and for each iteration, it multiplies A by (I+N-P) and
+    // multiplies B by I. At the end of the loop, the values of A and B are used to calculate the
+    // probability of winning in a horse race. 
+    for (I = 1 ; I <= P; I++) {
+        A = A*(I+N-P)
+        B = B*I
+    }
+
+    result.innerHTML += 'Dans l\'ordre, une chance sur ' + A
+    result2.innerHTML += 'Dans le désordre, une chance sur ' + A/B
+</script>
+</html>

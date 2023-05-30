@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nbpg1</title>
+</head>
+<body>
+    <p id="result1"></p>
+    <p id="result2"></p>
+</body>
+<script>
+    var nb = prompt('Entrez un nombre : ')
+    nb = parseInt(nb)
+    var i
+    var pg = 0
+    var ipg
+    let result = document.getElementById('result1')
+    let result2 = document.getElementById('result2')
+
+
+    for (i = 0; i <= 20; i++) {
+        nb = prompt('Entrez un nombre : ')
+        if(nb > pg){
+            pg = nb
+            ipg = i
+        }
+    }
+
+    result.innerHTML += 'Le nombre le plus grand était : ' + pg
+    result2.innerHTML += 'Il a été saisi en position numéro : ' + ipg
+</script>
+</html>

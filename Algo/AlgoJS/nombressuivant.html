@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    var nb = prompt('Entrez un nombre : ')
+    console.log(nb)
+    var i = 0
+    let result = document.getElementById('result')
+    while (i<10) {
+        i = i + 1
+        console.log(parseInt(nb)+i)
+        result.innerHTML += parseInt(nb)+i + ' '
+    }
+</script>
+</html>

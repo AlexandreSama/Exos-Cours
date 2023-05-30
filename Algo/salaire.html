@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Salaire de base</h3>
+    <input type="number" placeholder="Salaire de base" id="iBaseSalary">
+    <h3>Chiffre d'Affaires</h3>
+    <input type="number" placeholder="CA" id="iCA">
+    <h3>Compteur kilométriques</h3>
+    <input type="number" placeholder="Kilomètres" id="iKM">
+    <input type="submit" value="Valider" id="submit">
+
+    <h1>Résultat</h1>
+    <h3>Salaire de base</h3>
+    <p id="outBaseSalary"></p>
+    <h3>Salaire avec CA et Frais Kilomètriques</h3>
+    <p id="outSalaryFull"></p>
+    <h3>CA</h3>
+    <p id="outCA"></p>
+    <h3>Frais Kilomètriques</h3>
+    <p id="outKM"></p>
+</body>
+<script>
+    document.getElementById('submit').addEventListener('click', () => {
+
+        //On récupère tout les inputs
+        let iBaseSalary = Number(document.getElementById('iBaseSalary').value)
+        let iCA = Number(document.getElementById('iCA').value)
+        let iKM = Number(document.getElementById('iKM').value)
+
+        //On récupère tout les outputs
+        let outBaseSalary = document.getElementById('outBaseSalary')
+        let outSalaryFull = document.getElementById('outSalaryFull')
+        let outCA = document.getElementById('outCA')
+        let outKM = document.getElementById('outKM')
+
+        //On calcule la prime de CA
+        let primeCA
+        if(iCA >= 50000){
+            primeCA = iCA * (4 / 100)
+        }else{
+            primeCA = iCA * (2 / 100)
+        }
+
+        //On calcule la prime de TP
+        let primeTP = iKM * 0.26
+
+        //On calcule le salaire entier (SalaireBase + TP + CA)
+        let salaryFull = iBaseSalary + primeCA + primeTP
+
+        //Et on envoi le résultat
+        outBaseSalary.innerHTML = iBaseSalary + '€'
+        outSalaryFull.innerHTML = Math.round(salaryFull) + '€'
+        outCA.innerHTML = Math.round(primeCA) + '€'
+        outKM.innerHTML = Math.round(primeTP) + '€'
+
+    })
+</script>
+</html>

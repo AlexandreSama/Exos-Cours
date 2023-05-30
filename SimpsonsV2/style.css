@@ -1,0 +1,290 @@
+/* This code is setting the default padding and margin of all elements to 0 and using the border-box
+box-sizing model. It is also setting the background color of the body element to yellow. */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: yellow;
+}
+.container {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  left: 10%;
+  background-color: white;
+}
+
+/*  Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 35%;
+  border-bottom: 2px dashed black;
+}
+.headertitle {
+  font-size: xx-large;
+  display: inherit;
+  justify-content: center;
+  width: 100%;
+  height: 30%;
+  background-color: cornflowerblue;
+  color: white;
+}
+.figheader {
+  display: inherit;
+  width: 100%;
+  height: 75%;
+}
+.wallpaper {
+  width: 100%;
+}
+nav {
+  width: 100%;
+  height: inherit;
+  background-color: cornflowerblue;
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+li {
+  padding-top: 15px;
+  margin-right: 35px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Main */
+main {
+  display: flex;
+  height: 62%;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+article {
+  display: inherit;
+  flex-direction: column;
+  width: 95%;
+  height: 98%;
+  margin-right: 25px;
+  padding-top: 15px;
+}
+.articletitle {
+  color: orange;
+  font-size: xx-large;
+}
+.article {
+  overflow: scroll;
+  width: 100%;
+  text-align: justify;
+  margin-top: 5px;
+}
+.movieimage {
+  display: inherit;
+  height: 59%;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+.imgmovie {
+  width: 32%;
+  border: 2px solid gray;
+}
+
+/* Aside */
+
+aside {
+  display: inherit;
+  position: relative;
+  flex-direction: column;
+  width: 30%;
+  height: 95%;
+  top: 3%;
+  align-items: center;
+  background-color: cornflowerblue;
+  color: white;
+}
+.figaside {
+  width: 70%;
+  height: 68%;
+}
+.asidedesc {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+}
+.matt {
+  position: relative;
+  top: 2%;
+  width: 100%;
+  height: 95%;
+  border: 3px solid white;
+}
+.descr {
+  padding: 10px;
+  text-align: justify;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: mediumblue;
+  color: white;
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 769px) {
+    .asidedesc{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 769px) {
+    .container{
+        width: 100%;
+        left: 0%;
+    }
+  .asidedesc {
+    overflow: scroll;
+  }
+  .nav-links {
+    display: none;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .burger {
+    position: relative;
+    cursor: pointer;
+    left: -1%;
+  }
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 3px;
+  }
+
+  input[type="checkbox"]:checked ~ .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background-color: cornflowerblue;
+  }
+}
+
+/* Smartphones (portrait) -----------*/
+@media only screen and (max-width: 320px) {
+  /* Styles */
+  body {
+    background-color: white;
+  }
+  .nav-links {
+    display: none;
+  }
+  #burger {
+    display: block;
+    height: 100%;
+    width: 10%;
+  }
+}
+
+/* iPads (portrait and landscape) -----------*/
+@media only screen and (min-device-width: 770px) and (max-device-width: 1024px) {
+  /* Styles */
+  #burger {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+/* iPads (landscape) -----------*/
+@media only screen and (min-device-width: 770px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+  .article{
+    overflow: scroll;
+  }
+  #burger {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+/* iPads (portrait) -----------*/
+@media only screen and (min-device-width: 770px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+/* Desktops and laptops -----------*/
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+  #burger {
+    display: none;
+  }
+  input[type="checkbox"]:checked ~ .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    background-color: #333;
+    width: 50%;
+    height: 92vh;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+/* Large screens -----------*/
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+  #burger {
+    display: none;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+/* iPhone 4 -----------*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}

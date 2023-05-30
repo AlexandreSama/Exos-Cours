@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorielle</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    var nb = prompt('Entrez un nombre : ')
+    nb = parseInt(nb)
+    var i
+    var factorielle = 1
+    let result = document.getElementById('result')
+
+    for (i =1; i <= nb; i++) {
+        factorielle = factorielle*i
+    }
+
+    result.innerHTML += 'La factorielle est de : ' + factorielle
+</script>
+</html>

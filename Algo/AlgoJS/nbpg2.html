@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nbpg2</title>
+</head>
+<body>
+    <p id="result1"></p>
+    <p id="result2"></p>
+</body>
+<script>
+    var nb = prompt('Entrez un nombre : ')
+    nb = parseInt(nb)
+    var i
+    var pg = 0
+    var ipg = 0
+
+    let result = document.getElementById('result1')
+    let result2 = document.getElementById('result2')
+
+
+    // This code block is using a while loop to repeatedly prompt the user to enter a number until they
+    // enter 0. For each number entered, it checks if it is greater than the previous largest number
+    // (pg) and if so, it updates pg to the new number and also records the position of the new largest
+    // number (ipg). Finally, it outputs the largest number and its position in the HTML document
+    while (nb != 0) {
+        nb = parseInt(prompt('Entrez un nombre : '))
+        i = i + 1
+        if(i == 1 || nb > pg){
+            pg = nb
+            ipg = i
+            console.log(ipg)
+        }
+    }
+
+    result.innerHTML += 'Le nombre le plus grand était : ' + pg
+    result2.innerHTML += 'Il a été saisi en position numéro : ' + ipg
+</script>
+</html>
