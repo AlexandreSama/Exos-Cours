@@ -1,3 +1,4 @@
+/* ALL */
 * {
   margin: 0;
   padding: 0;
@@ -26,8 +27,8 @@ a {
   display: inherit;
   height: 100%;
 }
-/* HEADER */
 
+/* HEADER */
 header {
   display: flex;
   flex-direction: column;
@@ -87,8 +88,8 @@ ul {
   border-radius: 10px;
   height: 90%;
 }
-/* MAIN */
 
+/* MAIN */
 main {
   /* padding-top: 15px; */
   display: inherit;
@@ -161,12 +162,12 @@ aside {
 }
 
 /* WEIRD */
-
 .triangle {
   color: green;
   display: inherit;
   justify-content: center;
 }
+
 /* FOOTER */
 footer {
   display: inherit;
