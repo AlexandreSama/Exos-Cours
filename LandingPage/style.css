@@ -146,7 +146,7 @@ main{
     display: inherit;
     flex-direction: column;
     align-items: center;
-    height: 51%;
+    height: 42%;
 }
 .featuresText{
     display: inherit;
@@ -204,7 +204,7 @@ main{
     display: inherit;
     flex-direction: column;
     align-items: center;
-    height: 25%;
+    height: 18%;
     padding-bottom: 25px;
 }
 .teamsText{
@@ -327,30 +327,31 @@ main{
 /* Five Section */
 .blogSection{
     display: inherit;
+    height: 12%;
 }
 .blogHolder{
     display: inherit;
     justify-content: space-evenly;
     width: 100%;
-    padding-top: 50px;
+    /* padding-top: 50px; */
 }
 .firstBlog{
     display: inherit;
     flex-direction: column;
     width: 25%;
-    height: 64%;
+    height: 85%;
 }
 .secondBlog{
     display: inherit;
     flex-direction: column;
     width: 25%;
-    height: 64%;
+    height: 85%;
 }
 .thirdBlog{
     display: inherit;
     flex-direction: column;
     width: 25%;
-    height: 64%;
+    height: 85%;
 }
 .blogFigure{
     display: inherit;
@@ -391,17 +392,24 @@ main{
 .pricingSection{
     display: inherit;
     flex-direction: column;
+    height: 23%;
 }
 .firstPricingPart{
     display: inherit;
-    height: 30%;
+    height: 40%;
     justify-content: space-between;
     padding-left: 50px;
 }
-.firstPartText{
+.firstPart{
     display: inherit;
     flex-direction: column;
-    width: 36%;    
+    width: 50%;    
+}
+.text{
+    display: inherit;
+    width: 62%;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .infosTextPart{
     display: inherit;
@@ -412,8 +420,14 @@ main{
 .test{
     display: inherit;
     flex-direction: row;
-    width: 60%;
+    width: 56%;
     justify-content: space-between;
+}
+.learnPricing{
+    width: 20%;
+    text-align: center;
+    padding: 5px;
+    margin-top: 15px;
 }
 .firstPartImage{
     display: inherit;
@@ -437,29 +451,25 @@ main{
   width: 33%;
   text-align: center;
 }
+.imgPricing{
+    width: 100%;
+}
+
+
 .secondPartTab{
     display: inherit;
     width: 90%;
+    height: 75%;
     justify-content: space-between;
 }
-.firstTab{
-display: inherit;
-flex-direction: column;
-background-color: white;
-width: 32%;
+.tab{
+    display: inherit;
+    flex-direction: column;
+    background-color: white;
+    width: 20%;
+    height: 100%;
 }
-.secondTab{
-display: inherit;
-flex-direction: column;
-background-color: white;
-width: 32%;
-}
-.thirdTab{
-display: inherit;
-flex-direction: column;
-background-color: white;
-width: 32%;
-}
+
 .tabText{
     display: inherit;
     flex-direction: column;
@@ -469,4 +479,5 @@ width: 32%;
     display: inherit;
     flex-direction: row;
     justify-content: space-between;
+    height: 100%;
 }
