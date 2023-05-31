@@ -12,13 +12,13 @@
 }
   
 html, body {
-    height: 100%;
+    height: 100vh;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 378vh;
     width: 100%;
 }
 
@@ -27,8 +27,9 @@ header{
     display: inherit;
     flex-direction: row;
     width: 100%;
-    height: 5%;
+    height: 2%;
     align-items: center;
+    background: radial-gradient(rgb(139, 195, 245), #1294b8);
 }
 nav{
     display: inherit;
@@ -59,47 +60,413 @@ nav{
 /* MAIN */
 main{
     display: inherit;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: inherit;
 }
+
+/* first section*/
 .newsSection{
     display: inherit;
     width: 100%;
-    height: 50%;
+    height: 93%;
     justify-content: center;
+    background: radial-gradient(rgb(139, 195, 245), #1294b8);
+
 }
 .containNews{
     display: inherit;
-    width: 80%;
+    width: 100%;
+    align-items: center;
+    height: 92%;
+    justify-content: center;
 }
 .news{
     display: inherit;
     flex-direction: column;
-    width: 50%;
+    width: 37%;
     text-align: left;
+    height: 100%;
+    justify-content: center;
 }
 .titleNews{
-    font-size: xx-large;
-    width: 35%;
+    font-size: 45px;
+    width: 74%;
 }
 .textNews{
     padding-top: 10px;
     padding-bottom: 10px;
+    width: 75%;
 }
+
+.form{
+    display: inherit;
+    width: 75%;
+    height: 8%;
+}
+.inputEmail{
+    display: inherit;
+    width: 28%;
+    height: 5%;
+    border-radius: 30px;
+    position: absolute;
+    z-index: 1;
+    background-color: #ffffff8a;
+    opacity: 0.5;
+}
+.buttonSubmit{
+    width: 25%;
+    position: relative;
+    z-index: 2;
+    left: 74%;
+    top: 5px;
+    border-radius: 30px;
+    height: 75%;
+}
+
 .imageNews{
+    display: inherit;
+    display: inherit;
+    width: 37%;
+    height: 53%;
+    justify-content: center;
+}
+.imgFigureNews{
+    display: inherit;
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+.imgNews{
+    width: 100%;
+}
+
+/* second Section */
+.featuresSection{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    height: 51%;
+}
+.featuresText{
+    display: inherit;
+    flex-direction: column;
+    width: 29%;
+    padding-top: 15px;
+    text-align: center;
+}
+.featuresTitle{
+    padding-bottom: 10px;
+}
+.featuresCards{
+    display: inherit;
+    width: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+    height: 70%;
+    padding-top: 50px;
+    color: white;
+}
+.firstCard{
+    display: inherit;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 20%;
+    background: radial-gradient(rgb(139, 195, 245), #1294b8);
+    height: 100%;
+    justify-content: center;
+}
+.secondCard{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 31px;
+    width: 20%;
+    height: 100%;
+    justify-content: center;
+    background: radial-gradient(rgb(139, 195, 245), #1294b8);
+}
+.thirdCard{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 31px;
+    width: 20%;
+    height: 100%;
+    justify-content: center;
+    background: radial-gradient(rgb(139, 195, 245), #1294b8);
+}
+
+/* Third section */
+.teamsSection{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    height: 25%;
+    padding-bottom: 25px;
+}
+.teamsText{
+    display: inherit;
+    flex-direction: column;
+    width: 40%;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    text-align: center;
+    align-items: center;
+}
+.teamsTitle{
+    display: inherit;
+    width: 74%;
+}
+.teamsDescr{
+    display: inherit;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.firstDescr{
+    display: inherit;
+    flex-direction: column;
+    width: 15%;
+    align-items: center;
+}
+.secondDescr{
+    display: inherit;
+    flex-direction: column;
+    width: 15%;
+    align-items: center;
+}
+.thirdDescr{
+    display: inherit;
+    flex-direction: column;
+    width: 15%;
+    align-items: center;
+}
+.fourthDescr{
+    display: inherit;
+    flex-direction: column;
+    width: 15%;
+    align-items: center;
+}
+.teamsFigure{
+    padding-top: 15px;
+}
+.teamsIMG{
+    width: 100%;
+    border-radius: 50%;
+    position: relative;
+    z-index: 0;
+}
+.fa-twitter{
+    display: none;
+    position: relative;
+    left: 20%;
+    bottom: 50%;
+    z-index: 2;
+}
+.fa-facebook{
+    display: none;
+    position: relative;
+    left: 40%;
+    bottom: 50%;
+    z-index: 2;
+
+}
+.fa-discord{
+    display: none;
+    position: relative;
+    left: 59%;
+    bottom: 50%;
+    z-index: 2;
+
+}
+.teamsIMG:hover{
+    filter: grayscale(100%);
+    transform: scale(1.5);
+}
+.teamsIMG:hover ~ .fa-brands {
+    display: var(--fa-display,inline-block);
+    transform: scale(1.5);
+    color: white;
+}
+
+/* Fourth Section */
+
+.parallaxSection{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/parallax.png);
+    background-attachment: fixed;
+    background-size: cover;
+    /* filter: brightness(50%); */
+    /* background-position: 12%; */
+    /* background-position-y: center; */
+    display: inherit;
+    height: 75%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    /* background-position-y: bottom; */
+}
+.parallaxTest{
+    display: inherit;
+    justify-content: center;
+    width: 60%;
+    flex-direction: column;
+    color: white;
+}
+.parallaxButton{
+    align-self: center;
+    padding: 14px;
+    margin-top: 25px;
+    background: transparent;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Five Section */
+.blogSection{
+    display: inherit;
+}
+.blogHolder{
+    display: inherit;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 50px;
+}
+.firstBlog{
+    display: inherit;
+    flex-direction: column;
+    width: 25%;
+    height: 64%;
+}
+.secondBlog{
+    display: inherit;
+    flex-direction: column;
+    width: 25%;
+    height: 64%;
+}
+.thirdBlog{
+    display: inherit;
+    flex-direction: column;
+    width: 25%;
+    height: 64%;
+}
+.blogFigure{
+    display: inherit;
+    height: 74%;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+}
+.fa-user{
+    display: none;
+    position: absolute;
+    left: 5%;
+    top: 15%;
+}
+.fa-clock{
+    display: none;
+    position: absolute;
+    left: 5%;
+    top: 25%;
+}
+.blogImage{
+    height: 100%;
+}
+.blogImage:hover{
+    filter: grayscale(100%);
+}
+
+.blogImage:hover ~ .fa-regular{
+    display: var(--fa-display,inline-block);
+}
+.linkBlog{
+    padding-top: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Six Section */
+.pricingSection{
+    display: inherit;
+    flex-direction: column;
+}
+.firstPricingPart{
+    display: inherit;
+    height: 30%;
+    justify-content: space-between;
+    padding-left: 50px;
+}
+.firstPartText{
+    display: inherit;
+    flex-direction: column;
+    width: 36%;    
+}
+.infosTextPart{
+    display: inherit;
+    flex-direction: row;
+    width: 44%;
+    justify-content: space-between;
+}
+.test{
+    display: inherit;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-between;
+}
+.firstPartImage{
     display: inherit;
     width: 50%;
 }
-.imgFigureNews{
-
+.figPricing{
+    display: inherit;
+    width: 100%;
 }
-.imgNews{
-
+.secondPricingPart{
+    display: inherit;
+    flex-direction: column;
+    background-color: grey;
+    height: 60%;
+    align-items: center;
 }
-
-.inputEmail{
-
+.secondPartText{
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+  text-align: center;
 }
-.buttonSubmit{
-
+.secondPartTab{
+    display: inherit;
+    width: 90%;
+    justify-content: space-between;
+}
+.firstTab{
+display: inherit;
+flex-direction: column;
+background-color: white;
+width: 32%;
+}
+.secondTab{
+display: inherit;
+flex-direction: column;
+background-color: white;
+width: 32%;
+}
+.thirdTab{
+display: inherit;
+flex-direction: column;
+background-color: white;
+width: 32%;
+}
+.tabText{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+}
+.tabSpec{
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
 }
