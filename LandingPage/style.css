@@ -77,6 +77,10 @@ nav{
     text-decoration: none;
     color: white
 }
+li:hover{
+    translate: 10px 10px;
+
+}
 .divIconsHeader{
     display: inherit;
     justify-content: space-between;
@@ -96,7 +100,7 @@ main{
 .newsSection{
     display: inherit;
     width: 100%;
-    height: 28%;
+    height: 29%;
     justify-content: center;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
 
@@ -111,19 +115,20 @@ main{
 .news{
     display: inherit;
     flex-direction: column;
-    width: 37%;
+    width: 35%;
     text-align: left;
     height: 100%;
     justify-content: center;
 }
 .titleNews{
-    font-size: 45px;
-    width: 74%;
+    font-size: 68px;
+    width: 77%;
 }
 .textNews{
     padding-top: 10px;
     padding-bottom: 10px;
     width: 75%;
+    text-align: justify;
 }
 
 .form{
@@ -133,7 +138,7 @@ main{
 }
 .inputEmail{
     display: inherit;
-    width: 28%;
+    width: 27%;
     height: 7%;
     border: 2px solid #62a6c9;
     border-radius: 30px;
@@ -153,6 +158,9 @@ main{
     height: 75%;
     background-color: #62a6c9;
     color: white;
+}
+.buttonSubmit:hover{
+    translate: 10px 10px;
 }
 
 .imageNews{
@@ -206,6 +214,9 @@ main{
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
     height: 100%;
     justify-content: center;
+}
+.firstCard:hover, .secondCard:hover, .thirdCard:hover{
+    translate: 10px 10px;
 }
 .secondCard{
     display: inherit;
@@ -348,6 +359,9 @@ main{
     flex-direction: column;
     color: white;
 }
+.titleParallax{
+    font-size: 30px;
+}
 .parallaxButton{
     align-self: center;
     padding: 14px;
@@ -355,6 +369,9 @@ main{
     background: transparent;
     border-radius: 10px;
     color: white;
+}
+.parallaxButton:hover{
+    translate: 10px 10px;
 }
 
 /* Five Section */
@@ -414,6 +431,10 @@ main{
 
 .blogImage:hover ~ .fa-regular{
     display: var(--fa-display,inline-block);
+    color: white;
+}
+.titleBlog{
+    padding-bottom: 10px;
 }
 .linkBlog{
     padding-top: 10px;
@@ -425,7 +446,7 @@ main{
 .pricingSection{
     display: inherit;
     flex-direction: column;
-    height: 20%;
+    height: 22%;
 }
 .firstPricingPart{
     display: inherit;
@@ -475,7 +496,7 @@ main{
 .secondPricingPart{
     display: inherit;
     flex-direction: column;
-    background-color: grey;
+    background-color: #f3f3f3;
     height: 60%;
     align-items: center;
 }
@@ -485,6 +506,10 @@ main{
   align-items: center;
   width: 33%;
   text-align: center;
+  padding-bottom: 15px;
+}
+.titlePricing{
+    padding-bottom: 10px;
 }
 .imgPricing{
     width: 100%;
@@ -503,6 +528,9 @@ main{
     background-color: white;
     width: 20%;
     height: 100%;
+    border-radius: 5%;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 5px gray;
 }
 
 .tabText{
@@ -510,22 +538,44 @@ main{
     flex-direction: column;
     align-items: center;
 }
+.tabTitle{
+    font-size: 25px;
+}
+.textUnderTitle{
+    display: inherit;
+    flex-direction: row;
+    width: 24%;
+    text-align: end;
+}
+.price{
+    color: blue;
+    font-size: 40px;
+}
+.time{
+    align-self: self-end;
+}
 .tabSpec{
     display: inherit;
     flex-direction: row;
     justify-content: space-between;
-    height: 100%;
+    height: 48%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .Spec, .Checklist{
     display: inherit;
     flex-direction: column;
     justify-content: space-around;
 }
-.specName{
-
-}
-.iconSpec{
-
+.buttonTab{
+    display: inherit;
+    align-self: center;
+    justify-content: center;
+    width: 47%;
+    background-color: #5a8fff;
+    color: white;
+    height: 10%;
+    align-items: center;
 }
 /* FOOTER */
 
@@ -585,4 +635,18 @@ footer{
     border: solid gray 2px;
     background-color: #26272b;
     color: white;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 990px) {
+    .newsSection{
+        flex-direction: column;
+    }
+    .imageNews{
+        display: none;
+    }
+    .buttonUpToPage{
+        left: 72%;
+        top: 89%;
+    }
 }
