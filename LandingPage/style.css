@@ -13,7 +13,8 @@
   
 html, body {
     height: 100%;
-    min-height: 432vh;
+    min-height: 450vh;
+    background: radial-gradient(rgb(139, 195, 245), #1294b8);
 }
 
 .container {
@@ -31,9 +32,9 @@ header{
     display: inherit;
     flex-direction: row;
     width: 100%;
-    height: 1%;
+    height: 2%;
     align-items: center;
-    background: #1294b8;
+    background: transparent;
     color: white;
 }
 nav{
@@ -58,28 +59,18 @@ nav{
     list-style-type: none;
     align-items: center;
 }
-.linksHeader:link {
+.linksHeader {
     text-decoration: none;
-    color: white
+    color: white;
+    transition-property: color;
+    transition-duration: 1s;
+}
+.linksHeader:hover{
+    color: #9c9d9f;
 }
 
-.linksHeader:visited {
-    text-decoration: none;
-    color: white
-}
-
-.linksHeader:hover {
-    text-decoration: none;
-    color: white
-}
-
-.linksHeader:active {
-    text-decoration: none;
-    color: white
-}
 li:hover{
-    translate: 10px 10px;
-
+    color: #9c9d9f;
 }
 .divIconsHeader{
     display: inherit;
@@ -93,16 +84,16 @@ main{
     display: inherit;
     flex-direction: column;
     width: 100%;
-    height: 97%;
+    height: 95%;
 }
 
 /* first section*/
 .newsSection{
     display: inherit;
     width: 100%;
-    height: 29%;
+    height: 41%;
     justify-content: center;
-    background: radial-gradient(rgb(139, 195, 245), #1294b8);
+    background: transparent;
 
 }
 .containNews{
@@ -135,39 +126,46 @@ main{
     display: inherit;
     width: 75%;
     height: 8%;
+    border: 2px solid #62a6c9;
+    border-radius: 30px;
 }
 .inputEmail{
     display: inherit;
-    width: 27%;
-    height: 7%;
-    border: 2px solid #62a6c9;
-    border-radius: 30px;
-    position: absolute;
+    width: 75%;
+    height: 6%;
     z-index: 1;
-    background-color: #ffffff8a;
-    opacity: 0.5;
+    background-color: #deecf5;
+    border: 0;
+    border-radius: 30px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.inputEmail:focus{
+    outline: none;
+
 }
 .buttonSubmit{
     width: 25%;
     position: relative;
     z-index: 2;
-    left: 74%;
-    top: 8px;
-    border: 2px solid #62a6c9;
+    left: 50%;
+    border: 0;
     border-radius: 25px;
-    height: 75%;
-    background-color: #62a6c9;
+    height: 6%;
+    background-color: #4094b9;
     color: white;
+    bottom: 6%;
+    transition-property: background-color;
+    transition-duration: 2s;
 }
 .buttonSubmit:hover{
-    translate: 10px 10px;
+    background-color: #5db0d4;
 }
 
 .imageNews{
     display: inherit;
-    display: inherit;
-    width: 37%;
-    height: 53%;
+    width: 42%;
+    height: 100%;
     justify-content: center;
 }
 .imgFigureNews{
@@ -177,6 +175,7 @@ main{
     height: 100%;
 }
 .imgNews{
+    object-fit: cover;
     width: 100%;
 }
 
@@ -185,13 +184,14 @@ main{
     display: inherit;
     flex-direction: column;
     align-items: center;
-    height: 18%;
+    height: 33%;
+    background-color: white;
 }
 .featuresHolder{
     display: inherit;
     flex-direction: column;
     width: 29%;
-    padding-top: 15px;
+    padding-top: 120px;
     text-align: center;
 }
 .featuresTitle{
@@ -202,7 +202,7 @@ main{
     width: 100%;
     justify-content: space-evenly;
     text-align: center;
-    height: 70%;
+    height: 58%;
     padding-top: 50px;
     color: white;
 }
@@ -242,6 +242,7 @@ main{
 }
 .titleCard{
     padding-top: 35px;
+    font-size: 25px;
 }
 .textCard{
     padding-top: 15px;
@@ -252,8 +253,9 @@ main{
     display: inherit;
     flex-direction: column;
     align-items: center;
-    height: 20%;
+    height: 31%;
     padding-bottom: 25px;
+    background-color: white;
 }
 .teamsText{
     display: inherit;
@@ -297,14 +299,23 @@ main{
     width: 15%;
     align-items: center;
 }
+.titleDescr{
+    font-size: 25px;
+}
+.textDescr{
+    font-size: 15px;
+}
 .teamsFigure{
     padding-top: 15px;
+    overflow: hidden;
 }
 .teamsIMG{
     width: 100%;
     border-radius: 50%;
     position: relative;
     z-index: 0;
+    filter: grayscale(100%);
+    transition: transform 1s, display 1s, color;
 }
 .twitterTeams{
     display: none;
@@ -330,12 +341,12 @@ main{
 
 }
 .teamsIMG:hover{
-    filter: grayscale(100%);
-    transform: scale(1.5);
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }
 .teamsIMG:hover ~ .fa-brands {
     display: var(--fa-display,inline-block);
-    transform: scale(1.5);
+    transform: scale(1.1);
     color: white;
 }
 
@@ -346,7 +357,7 @@ main{
     background-attachment: fixed;
     background-size: cover;
     display: inherit;
-    height: 14%;
+    height: 20%;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -365,20 +376,42 @@ main{
 .parallaxButton{
     align-self: center;
     padding: 14px;
+    position: relative;
     margin-top: 25px;
+    width: 15%;
     background: transparent;
     border-radius: 10px;
+    border: 1px solid white;
     color: white;
+    transition-property: color, background-color, top;
+    transition-duration: 1s;
 }
 .parallaxButton:hover{
-    translate: 10px 10px;
+    color: black;
+    background-color: white;
+    bottom: 5px;
 }
 
 /* Five Section */
 .blogSection{
     display: inherit;
-    height: 13%;
-    padding-top: 20px;
+    flex-direction: column;
+    height: 24%;
+    padding-top: 30px;
+    background-color: white;
+}
+.blogFirstPart{
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    width: 30%;
+    align-self: center;
+    text-align: center;
+}
+.blogTitle{
+    font-size: 30px;
 }
 .blogHolder{
     display: inherit;
@@ -447,6 +480,7 @@ main{
     display: inherit;
     flex-direction: column;
     height: 22%;
+    background-color: white;
 }
 .firstPricingPart{
     display: inherit;
