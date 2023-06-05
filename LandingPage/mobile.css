@@ -1,252 +1,239 @@
 /* ALL */
 
 @font-face {
-    font-family: Poppins;
-    src: url(fonts/Poppins-Regular.ttf);
+  font-family: Poppins;
+  src: url(fonts/Poppins-Regular.ttf);
 }
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Poppins;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
 }
-  
-html, body {
-    height: 100%;
-    min-height: 475vh;
-    scroll-behavior: smooth;
-    background: radial-gradient(rgb(139, 195, 245), #1294b8);
+
+html,
+body {
+  height: 100%;
+  min-height: 1000vh;
+  scroll-behavior: smooth;
+  background: radial-gradient(rgb(139, 195, 245), #1294b8);
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
-.grayText{
-    color: #9c9d9f;
+.grayText {
+  color: #9c9d9f;
 }
+
 /* HEADER */
-header{
-    display: inherit;
-    flex-direction: row;
-    width: 100%;
-    height: 2%;
-    align-items: center;
-    background: transparent;
-    color: white;
+header {
+  display: inherit;
+  flex-direction: row;
+  width: 100%;
+  height: 1%;
+  align-items: center;
+  background: transparent;
+  color: white;
 }
-nav{
-    display: inherit;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
+nav {
+  display: inherit;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
-.divLogoHeader{
-    display: inherit;
-    font-size: 25px;
+.divLogoHeader {
+  display: inherit;
+  font-size: 25px;
 }
-.divLinksHeader{
-    display: inherit;
-    width: 50%;
-    justify-content: center;
+.divLinksHeader {
+  display: none;
+  width: 50%;
+  justify-content: center;
 }
-.ulLinksHeader{
-    display: inherit;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    list-style-type: none;
-    align-items: center;
+.ulLinksHeader {
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  list-style-type: none;
+  align-items: center;
 }
 .linksHeader {
-    text-decoration: none;
-    color: white;
-    transition-property: color;
-    transition-duration: 1s;
+  text-decoration: none;
+  color: white;
+  transition-property: color;
+  transition-duration: 1s;
 }
-.linksHeader:hover{
-    color: #9c9d9f;
+.linksHeader:hover {
+  color: #9c9d9f;
 }
 
-li:hover{
-    color: #9c9d9f;
+li:hover {
+  color: #9c9d9f;
 }
-.divIconsHeader{
-    display: inherit;
-    justify-content: space-between;
-    width: 5%;
-    align-items: center;
+.divIconsHeader {
+  display: none;
+  justify-content: space-between;
+  width: 5%;
+  align-items: center;
 }
-input[type="checkbox"]{
-    display: none;
+
+input[type="checkbox"] {
+  display: none;
+  height: 0;
 }
-/* MAIN */
+
+.burger {
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.navButtons input[type="checkbox"] {
+  height: 10%;
+}
+
+input[type="checkbox"]:checked ~ .divLinksHeader > .ulLinksHeader {
+  display: inherit;
+}
+input[type="checkbox"]:checked ~
+.divLinksHeader {
+display: inherit;
+  height: 25vh;
+  width: 50%;
+  z-index: 1;
+  position: absolute;
+  top: 15%;
+}
+input[type="checkbox"]:checked,
+.ulLinksHeader {
+  flex-direction: column;
+  background-color: black;
+}
+
+
+/* First Section */
 main{
+    height: 100%;
     display: inherit;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
 }
-
-/* first section*/
 .newsSection{
     display: inherit;
-    width: 100%;
-    height: 69%;
+    height: 43%;
     justify-content: center;
-    background: transparent;
-
+    text-align: center;
 }
 .containNews{
     display: inherit;
-    width: 100%;
-    align-items: center;
-    height: 92%;
-    justify-content: center;
+    height: 100%;
+    flex-direction: column
 }
 .news{
     display: inherit;
     flex-direction: column;
-    width: 35%;
-    text-align: left;
-    height: 100%;
-    justify-content: center;
+    height: 30%;
 }
 .titleNews{
-    font-size: 68px;
-    width: 77%;
+    padding-top: 20px;
 }
 .textNews{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 75%;
-    text-align: justify;
-}
-
-.form{
-    display: inherit;
-    width: 75%;
-    height: 8%;
-    border: 2px solid #62a6c9;
-    border-radius: 30px;
+    padding-bottom: 20px;
 }
 .inputEmail{
     display: inherit;
-    width: 75%;
-    height: 6%;
-    z-index: 1;
-    background-color: #deecf5;
-    border: 0;
-    border-radius: 30px;
-    padding-left: 10px;
-    margin-top: 10px;
-}
-.inputEmail:focus{
-    outline: none;
-
+    width: 50%;
+    text-align: center;
+    align-self: center;
 }
 .buttonSubmit{
-    width: 25%;
-    position: relative;
-    z-index: 2;
-    left: 50%;
+    display: inherit;
+    width: 50%;
+    justify-content: center;
+    align-self: center;
     border: 0;
     border-radius: 25px;
-    height: 6%;
-    background-color: #4094b9;
-    color: white;
-    bottom: 6%;
-    transition-property: background-color;
-    transition-duration: 2s;
-}
-.buttonSubmit:hover{
-    background-color: #5db0d4;
-}
 
+}
 .imageNews{
     display: inherit;
-    width: 42%;
-    height: 73%;
-    justify-content: center;
+    height: 80%;
+    width: 100%;
 }
 .imgFigureNews{
     display: inherit;
-    width: 100%;
-    position: relative;
     height: 100%;
+    width: 100%;
 }
 .imgNews{
-    object-fit: contain;
     width: 100%;
 }
 
-/* second Section */
+/* Second Section */
 .featuresSection{
     display: inherit;
     flex-direction: column;
-    align-items: center;
-    height: 47%;
+    height: 65%;
     background-color: white;
+
 }
 .featuresHolder{
-    display: inherit;
-    flex-direction: column;
-    width: 29%;
-    padding-top: 60px;
     text-align: center;
+    height: 12%;
+    padding-top: 20px;
 }
 .featuresTitle{
     padding-bottom: 10px;
 }
 .featuresCards{
     display: inherit;
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
     text-align: center;
-    height: 58%;
-    padding-top: 50px;
+    height: 100%;
     color: white;
+    justify-content: space-evenly;
 }
 .firstCard{
     display: inherit;
     flex-direction: column;
     border-radius: 10px;
-    width: 20%;
+    width: 100%;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
-    height: 100%;
+    height: 30%;
     justify-content: center;
-    margin-right: 25px;
-}
-.firstCard:hover, .secondCard:hover, .thirdCard:hover{
-   position: relative;
-   bottom: 15px;
 }
 .secondCard{
     display: inherit;
     flex-direction: column;
-    align-items: center;
     border-radius: 10px;
-    padding: 31px;
-    width: 20%;
-    height: 100%;
-    justify-content: center;
+    width: 100%;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
-    margin-right: 25px;
+    height: 30%;
+    justify-content: center;
 }
 .thirdCard{
     display: inherit;
     flex-direction: column;
-    align-items: center;
     border-radius: 10px;
-    padding: 31px;
-    width: 20%;
-    height: 100%;
-    justify-content: center;
+    width: 100%;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
-    margin-right: 25px;
+    height: 30%;
+    justify-content: center;
 }
 .titleCard{
     padding-top: 35px;
@@ -256,62 +243,52 @@ main{
     padding-top: 15px;
 }
 
-/* Third section */
+/* Second Section */
 .teamsSection{
     display: inherit;
     flex-direction: column;
-    align-items: center;
-    height: 50%;
-    padding-bottom: 25px;
+    height: 61%;
     background-color: white;
+    padding-bottom: 20px;
 }
 .teamsText{
     display: inherit;
     flex-direction: column;
-    width: 40%;
-    padding-top: 15px;
-    padding-bottom: 50px;
     text-align: center;
-    align-items: center;
-}
-.teamsTitle{
-    display: inherit;
-    width: 74%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .teamsDescr{
     display: inherit;
-    width: 100%;
-    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
 }
 .firstDescr{
     display: inherit;
     flex-direction: column;
-    width: 15%;
+    width: 100%;
     align-items: center;
+    padding-bottom: 25px;
 }
 .secondDescr{
     display: inherit;
     flex-direction: column;
-    width: 15%;
+    width: 100%;
     align-items: center;
+    padding-bottom: 25px;
 }
 .thirdDescr{
     display: inherit;
     flex-direction: column;
-    width: 15%;
+    width: 100%;
     align-items: center;
+    padding-bottom: 25px;
 }
 .fourthDescr{
     display: inherit;
     flex-direction: column;
-    width: 15%;
+    width: 100%;
     align-items: center;
-}
-.titleDescr{
-    font-size: 25px;
-}
-.textDescr{
-    font-size: 15px;
 }
 .teamsFigure{
     padding-top: 15px;
@@ -349,17 +326,8 @@ main{
     z-index: 2;
 
 }
-.teamsIMG:hover{
-    filter: grayscale(0%);
-    transform: scale(1.1);
-}
-.teamsIMG:hover ~ .fa-brands {
-    display: var(--fa-display,inline-block);
-    transform: scale(1.1);
-    color: white;
-}
 
-/* Fourth Section */
+/* Third Section */
 
 .parallaxSection{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/parallax.png);
@@ -387,7 +355,7 @@ main{
     padding: 14px;
     position: relative;
     margin-top: 25px;
-    width: 15%;
+    width: 50%;
     background: transparent;
     border-radius: 10px;
     border: 1px solid white;
@@ -395,17 +363,17 @@ main{
     transition-property: color, background-color, top;
     transition-duration: 1s;
 }
-.parallaxButton:hover{
+/* .parallaxButton:hover{
     color: black;
     background-color: white;
     bottom: 5px;
-}
+} */
 
-/* Five Section */
+/* Blog Section */
 .blogSection{
     display: inherit;
     flex-direction: column;
-    height: 24%;
+    height: 41%;
     padding-top: 30px;
     background-color: white;
 }
@@ -415,7 +383,7 @@ main{
     justify-content: center;
     align-items: center;
     padding-bottom: 40px;
-    width: 30%;
+    width: 80%;
     align-self: center;
     text-align: center;
 }
@@ -426,23 +394,26 @@ main{
     display: inherit;
     justify-content: space-evenly;
     width: 100%;
+    flex-direction: column;
 }
 .firstBlog{
     display: inherit;
     flex-direction: column;
-    width: 25%;
+    width: 100%;
     height: 85%;
+    padding-bottom: 15px;
 }
 .secondBlog{
     display: inherit;
     flex-direction: column;
-    width: 25%;
+    width: 100%;
     height: 85%;
+    padding-bottom: 15px;
 }
 .thirdBlog{
     display: inherit;
     flex-direction: column;
-    width: 25%;
+    width: 100%;
     height: 85%;
 }
 .blogFigure{
@@ -484,12 +455,11 @@ main{
     color: black;
 }
 
-/* Six Section */
-
+/* Price Section */
 .priceSection{
     display: inherit;
-    flex-direction: row;
-    height: 30%;
+    flex-direction: column;
+    height: 45%;
     align-items: center;
     justify-content: space-evenly;
     background-color: white;
@@ -497,25 +467,29 @@ main{
 .textPartPrice{
     display: inherit;
     flex-direction: column;
-    width: 27%;
+    width: 100%;
 }
 .titlePart{
     font-size: 24px;
     padding-bottom: 45px;
+    text-align: center;
+    padding-top: 24px;
 }
 .textPart{
     padding-bottom: 40px;
+    text-align: center;
+
 }
 .firstInfoTextPart{
     display: inherit;
-    justify-content: space-between;
-    width: 44%;
+    justify-content: space-around;
+    width: 100%;
     font-size: 25px;
 }
 .secondInfoTextPart{
     display: inherit;
-    justify-content: space-between;
-    width: 60%;
+    justify-content: space-evenly;
+    width: 100%;
     padding-bottom: 30px;
 }
 .learnmorePricing{
@@ -526,11 +500,12 @@ main{
     border-radius: 10px;
     background-color: #5f8fff;
     color: white;
+    align-self: center;
 }
 .imagePart{
     display: inherit;
-    height: 70%;
-    width: 35%;
+    height: 45%;
+    width: 100%;
 }
 .figImagePrice{
     display: inherit;
@@ -540,7 +515,7 @@ main{
     width: 100%;
 }
 
-/* Seven Section */
+/* Tabs Section */
 .tabSection{
     display: inherit;
     flex-direction: column;
@@ -550,37 +525,38 @@ main{
     background-color: #f3f3f3;
 }
 .tabTextPart{
-    width: 26%;
+    width: 100%;
     text-align: center;
-    margin-bottom: 60px;
 }
 .tabPart{
     display: inherit;
-    width: 70%;
-    height: 66%;
+    flex-direction: column;
+    width: 80%;
+    height: 85%;
     justify-content: space-evenly;
 }
 .tab{
     display: inherit;
     flex-direction: column;
     background-color: white;
-    width: 25%;
+    width: 100%;
     height: 100%;
     border-radius: 5%;
     justify-content: space-evenly;
     box-shadow: 0px 0px 5px gray;
+    padding-bottom: 15px;
 }
 .tabTwo{
     display: inherit;
     flex-direction: column;
     background-color: white;
-    width: 25%;
+    width: 100%;
     height: 100%;
     border-radius: 5%;
     justify-content: space-evenly;
     box-shadow: 0px 0px 5px gray;
-    position: relative;
-    bottom: 30px;
+    /* position: relative; */
+    /* bottom: 30px; */
 }
 .tabText{
     display: inherit;
@@ -628,13 +604,14 @@ main{
     height: 10%;
     align-items: center;
 }
+
 /* FOOTER */
 
 footer{
     display: inherit;
     flex-direction: row;
     justify-content: center;
-    height: 3%;
+    height: 2%;
     align-items: center;
     background-color: #26272b;
     color: gray;
@@ -643,7 +620,7 @@ footer{
 .footerHolder{
     display: inherit;
     flex-direction: column;
-    width: 25%;
+    width: 80%;
 }
 .iconsFooter{
     display: inherit;
@@ -679,7 +656,7 @@ footer{
 /* Button UpToPage */
 .buttonUpToPage{
     position: fixed;
-    left: 96%;
+    left: 85%;
     top: 90%;
     padding: 20px;
     border-radius: 50%;
