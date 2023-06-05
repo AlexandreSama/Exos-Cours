@@ -623,10 +623,15 @@ main{
     align-self: center;
     justify-content: center;
     width: 92%;
-    background-color: #5a8fff;
-    color: white;
+    background-color: white;
+    color: black;
     height: 10%;
     align-items: center;
+    border-radius: 5%;
+}
+.buttonTab:hover{
+    background-color: #5a8fff;
+    color: white;
 }
 /* FOOTER */
 
