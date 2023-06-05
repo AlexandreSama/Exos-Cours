@@ -1,368 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/eec634434d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" media="screen and (max-width: 1079px)" href="./mobile.css" />
-    <link rel="stylesheet" media="screen and (min-width: 1080px)" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/eec634434d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 1080px)"
+      href="./all.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      media="screen and (max-width: 1079px)"
+      href="./mobile.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 1080px)"
+      href="./style.css"
+    /> -->
     <title>Landing Page</title>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <nav>
-                <div class="divLogoHeader">
-                    <h1><strong>Kucra</strong></h1>
-                </div>
-                <input type="checkbox" id="menu-toggle" />
-                <label for="menu-toggle" class="burger">
-                  <div class="line1"></div>
-                  <div class="line2"></div>
-                  <div class="line3"></div>
-                </label>
-                <div class="divLinksHeader">
-                    <ul class="ulLinksHeader">
-                        <li>
-                            <a class="linksHeader" href="#">HOME</a>
-                        </li>
-                        <li>
-                            <a class="linksHeader" href="#features">FEATURES</a>
-                        </li>
-                        <li>
-                            <a class="linksHeader" href="#teams">CLIENT</a>
-                        </li>
-                        <li>
-                            <a class="linksHeader" href="#pricing">PRICING</a>
-                        </li>
-                        <li>
-                            <a class="linksHeader" href="#parallax">FAQ</a>
-                        </li>
-                        <li>
-                            <a class="linksHeader" href="#parallax">ABOUT</a>
-                        </li>
-                        <li>
-                            <a class="linksHeader" href="#blog">BLOG</a>
-                        </li>
-                        <li>
-                            <a class="linksHeader" href="#contact">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="divIconsHeader">
-                    <a class="linksHeader" href="#"><i class="facebookHeader fa-brands fa-facebook-f"></i></a>
-                    <a class="linksHeader" href="#"><i class="twitterHeader fa-brands fa-twitter"></i></a>
-                    <a class="linksHeader" href="#"><i class="instagramHeader fa-brands fa-instagram"></i></a>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <section class="newsSection">
-                <div class="containNews">
-                    <div class="news">
-                        <h2 class="titleNews"><strong>We are StartUp Creative Kucra Agency</strong></h2>
-                        <p class="textNews">Carefully crafted after analysing the needs of
-                            different industries and the design achieves
-                            a great balance between purpose & presentation
-                        </p>
-                        <input type="text" placeholder="Enter your email" class="inputEmail">
-                        <button class="buttonSubmit">SUBSCRIBE</button>
-                    </div>
-                    <div class="imageNews">
-                        <figure class="imgFigureNews">
-                            <img src="./images/illustration.svg" alt="CatPC" class="imgNews">
-                        </figure>
-                    </div>
-                </div>
-            </section>
-            <section class="featuresSection" id="features">
-                <div class="featuresHolder">
-                    <h2 class="featuresTitle">Products Features</h2>
-                    <p class="grayText">It is a long established fact that a reader will be of a page when
-                        established fact looking at its layout
-                    </p>
-                </div>
-                <div class="featuresCards">
-                    <div class="firstCard">
-                        <i class="fa-solid fa-globe fa-2xl"></i>
-                        <h4 class="titleCard">Digital Design</h4>
-                        <p class="textCard">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="secondCard">
-                        <i class="fa-solid fa-brush fa-2xl"></i>
-                        <h4 class="titleCard">Unlimited Colors</h4>
-                        <p class="textCard">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="thirdCard">
-                        <i class="fa-solid fa-chess fa-2xl"></i>
-                        <h4 class="titleCard">Strategy Solutions</h4>
-                        <p class="textCard">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-            </section>
-           <section class="teamsSection" id="teams">
-                <div class="teamsText">
-                    <h2 class="teamsTitle">We'r dynamic team of talented people of innovative & marketing expert</h2>
-                    <p class="grayText">To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words.
-                        If several languages of the resulting language.
-                    </p>
-                </div>
-                <div class="teamsDescr">
-                    <div class="firstDescr">
-                        <h4 class="titleDescr">1499+</h4>
-                        <p class="textDescr grayText">Complete Projetcs</p>
-                        <figure class="teamsFigure">
-                            <img src="./images/person1.png" alt="team1" class="teamsIMG">
-                            <i class="twitterTeams fa-brands fa-twitter"></i>
-                            <i class="facebookTeams fa-brands fa-facebook"></i>
-                            <i class="discordTeams fa-brands fa-discord"></i>
-                        </figure>
-                        <p>Anna G. Wilhite</p>
-                        <p class="grayText">CEO/Founder</p>
-                    </div>
-                    <div class="secondDescr">
-                        <h4 class="titleDescr">1080K</h4>
-                        <p class="textDescr grayText">Satisfied Clients</p>
-                        <figure class="teamsFigure">
-                            <img src="./images/person2.png" alt="team1" class="teamsIMG">
-                            <i class="twitterTeams fa-brands fa-twitter"></i>
-                            <i class="facebookTeams fa-brands fa-facebook"></i>
-                            <i class="discordTeams fa-brands fa-discord"></i>
-                        </figure>
-                        <p>William S. Blay</p>
-                        <p class="grayText">CTO/Co-Founder</p>
-                    </div>
-                    <div class="thirdDescr">
-                        <h4 class="titleDescr">608</h4>
-                        <p class=" grayText">Team Members</p>
-                        <figure class="teamsFigure">
-                            <img src="./images/person3.png" alt="team1" class="teamsIMG">
-                            <i class="twitterTeams fa-brands fa-twitter"></i>
-                            <i class="facebookTeams fa-brands fa-facebook"></i>
-                            <i class="discordTeams fa-brands fa-discord"></i>
-                        </figure>
-                        <p>Maria B. Morales</p>
-                        <p class="grayText">Web Designer</p>
-                    </div>
-                    <div class="fourthDescr">
-                        <h4 class="titleDescr">252</h4>
-                        <p class="textDescr grayText">Employee</p>
-                        <figure class="teamsFigure">
-                            <img src="./images/person4.png" alt="team1" class="teamsIMG">
-                            <i class="twitterTeams fa-brands fa-twitter"></i>
-                            <i class="facebookTeams fa-brands fa-facebook"></i>
-                            <i class="discordTeams fa-brands fa-discord"></i>
-                        </figure>
-                        <p>Luke L. Johnston</p>
-                        <p class="grayText">Web Developer</p>
-                    </div>
-                </div>
-            </section>
-            <section class="parallaxSection" id="parallax">
-                <div class="parallaxTest">
-                    <h4 class="titleParallax">Let's get started with Kucra</h4>
-                    <p class="grayText">They are a good way to get you started if you want to build something similar or use from existing apps wich will reduce the cost,
-                        efforts and time of the developers.
-                    </p>
-                    <button class="parallaxButton">Get Started</button>
-                </div>
-            </section>
-            <section class="blogSection" id="blog">
-                <div class="blogFirstPart">
-                    <h4 class="blogTitle">Our Blog</h4>
-                    <p class="grayText">It is a long established fact that a reader will be of a page when established fact looking at its layout</p>
-                </div>
-                <div class="blogHolder">
-                    <div class="firstBlog">
-                        <figure class="blogFigure">
-                            <img src="./images/blog1.png" alt="" class="blogImage">
-                            <i class="fa-regular fa-user">Calvin Carlo</i>
-                            <i class="fa-regular fa-clock">20th March 2021</i>
-                        </figure>
-                        <h3 class="titleBlog">Doing a cross country road trip</h3>
-                        <p class="grayText">We craft digital graphic and dimensional thinking to create category loading brand.</p>
-                        <a href="#" class="linkBlog">Read more</a>
-                    </div>
-                    <div class="secondBlog">
-                        <figure class="blogFigure">
-                            <img src="./images/blog2.png" alt="" class="blogImage">
-                            <i class="fa-regular fa-user">Calvin Carlo</i>
-                            <i class="fa-regular fa-clock">20th March 2021</i>
-                        </figure>
-                        <h3 class="titleBlog">New exhibition at our Museum</h3>
-                        <p class="grayText">We craft digital graphic and dimensional thinking to create category loading brand.</p>
-                        <a href="#" class="linkBlog">Read more</a>
-                    </div>
-                    <div class="thirdBlog">
-                        <figure class="blogFigure">
-                            <img src="./images/blog3.png" alt="" class="blogImage">
-                            <i class="fa-regular fa-user">Calvin Carlo</i>
-                            <i class="fa-regular fa-clock">20th March 2021</i>
-                        </figure>
-                        <h3 class="titleBlog">Design your apps in your own way</h3>
-                        <p class="grayText">We craft digital graphic and dimensional thinking to create category loading brand.</p>
-                        <a href="#" class="linkBlog">Read more</a>
-                    </div>
-                </div>
-            </section>
-           <section class="priceSection">
-                <div class="textPartPrice">
-                    <h3 class="titlePart"><strong>We are digital creative Landing Page</strong></h3>
-                    <div class="textPart">
-                        <p class="grayText">The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack of will.
-                            Composed in a pseudo-Latin language wich more or less pseudo-Latin language corresponds.
-                        </p>
-                    </div>
-                    <div class="firstInfoTextPart">
-                        <p>4957</p>
-                        <p>1599</p>
-                    </div>
-                    <div class="secondInfoTextPart">
-                        <p class="grayText">Happy User</p>
-                        <p class="grayText">Complete Project</p>
-                    </div>
-                    <button class="learnmorePricing">Learn More</button>
-                </div>
-                <div class="imagePart">
-                    <figure class="figImagePrice">
-                        <img src="./images/creativity.png" alt="" class="imgPrice">
-                    </figure>
-                </div>
-            </section>
-            <section class="tabSection" id="pricing">
-                    <div class="tabTextPart">
-                        <h2 class="titleTextTab">Our Pricing</h2>
-                        <p class="grayText">It is a long established fact that a reader will be a page when established fact looking at its layout</p>
-                    </div>
-                    <div class="tabPart">
-                        <div class="tab">
-                            <div class="tabText">
-                                <h6 class="tabTitle">Advanced</h6>
-                                <div class="textUnderTitle">
-                                    <p class="price">$19</p>
-                                    <p class="time">/Month</p>
-                                </div>
-                            </div>
-                            <div class="tabSpec">
-                                <div class="Spec">
-                                    <p class="specName"><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Bandwidth</p>
-                                    <p class="specName"><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Onlinespace</p>
-                                    <p class="specName"><i class="iconSpec fa-regular fa-circle-xmark" style="color: #ff0000;"></i> SupportENG</p>
-                                    <p class="specName"><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Domain</p>
-                                    <p class="specName"><i class="iconSpec fa-regular fa-circle-xmark" style="color: #ff0000;"></i> Hidden Fees</p>
-                                </div>
-                                <div class="Checklist">
-                                    <p>2GB</p>
-                                    <p>1GB</p>
-                                    <p>Yes</p>
-                                    <p>3</p>
-                                    <p>No</p>
-                                </div>
-                            </div>
-                        <button class="buttonTab">Join Now</button>
-                        </div>
-                        <div class="tabTwo">
-                            <div class="tabText">
-                                <h6 class="tabTitle">Advanced</h6>
-                                <div class="textUnderTitle">
-                                    <p class="price">$19</p>
-                                    <p class="time">/Month</p>
-                                </div>
-                            </div>
-                            <div class="tabSpec">
-                                <div class="Spec">
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Bandwidth</p>
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Onlinespace</p>
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> SupportENG</p>
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Domain</p>
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Hidden Fees</p>
-                                </div>
-                                <div class="Checklist">
-                                    <p>2GB</p>
-                                    <p>1GB</p>
-                                    <p>Yes</p>
-                                    <p>3</p>
-                                    <p>No</p>
-                                </div>
-                            </div>
-                            <button class="buttonTab">Join Now</button>
-                        </div>
-                        <div class="tab">
-                            <div class="tabText">
-                                <h6 class="tabTitle">Advanced</h6>
-                                <div class="textUnderTitle">
-                                    <p class="price">$19</p>
-                                    <p class="time">/Month</p>
-                                </div>
-                            </div>
-                            <div class="tabSpec">
-                                <div class="Spec">
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Bandwidth</p>
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Onlinespace</p>
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> SupportENG</p>
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Domain</p>
-                                    <p><i class="iconSpec fa-regular fa-circle-check" style="color: #00ff00;"></i> Hidden Fees</p>
-                                </div>
-                                <div class="Checklist">
-                                    <p>2GB</p>
-                                    <p>1GB</p>
-                                    <p>Yes</p>
-                                    <p>3</p>
-                                    <p>No</p>
-                                </div>
-                            </div>
-                            <button class="buttonTab">Join Now</button>
-                        </div>
-                    </div>
-            </section>
-        </main>
-        <footer id="contact">
-            <div class="footerHolder">
-                <div class="iconsFooter">
-                    <i class="facebookFooter fa-brands fa-facebook"></i>
-                    <i class="twitterFooter fa-brands fa-twitter"></i>
-                    <i class="linkedinFooter fa-brands fa-linkedin"></i>
-                    <i class="gplusFooter fa-brands fa-google-plus-g"></i>
-                </div>
-                <div class="rgpdFooter">
-                    <p>Terms & Conditions</p>
-                    <p>|</p>
-                    <p>Privacy Policy</p>
-                    <p>|</p>
-                    <p>Contact Us</p>
-                </div>
-                <div>
-                    <small>2022 &copy; Kucra - Landing Page Template by Pichforest</small>
-                </div>
+  </head>
+  <body>
+    <header>
+      <div class="divLogoHeader">
+        <h1>Kucra</h1>
+      </div>
+      <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </label>
+        <div class="divLinksHeader">
+          <ul class="ulLinksHeader" id="ulLinksHeader">
+            <li>
+              <a class="linksHeader" href="#" onclick="closeMenu()">HOME</a>
+            </li>
+            <li>
+              <a class="linksHeader" href="#features" onclick="closeMenu()"
+                >FEATURES</a
+              >
+            </li>
+            <li>
+              <a class="linksHeader" href="#teams" onclick="closeMenu()"
+                >CLIENT</a
+              >
+            </li>
+            <li>
+              <a class="linksHeader" href="#pricing" onclick="closeMenu()"
+                >PRICING</a
+              >
+            </li>
+            <li>
+              <a class="linksHeader" href="#parallax" onclick="closeMenu()"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a class="linksHeader" href="#parallax" onclick="closeMenu()"
+                >ABOUT</a
+              >
+            </li>
+            <li>
+              <a class="linksHeader" href="#blog" onclick="closeMenu()">BLOG</a>
+            </li>
+            <li>
+              <a class="linksHeader" href="#contact" onclick="closeMenu()"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="divIconsHeader">
+          <a class="linksHeader" href="#"
+            ><i class="facebookHeader fa-brands fa-facebook-f"></i
+          ></a>
+          <a class="linksHeader" href="#"
+            ><i class="twitterHeader fa-brands fa-twitter"></i
+          ></a>
+          <a class="linksHeader" href="#"
+            ><i class="instagramHeader fa-brands fa-instagram"></i
+          ></a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="newsSection">
+        <div class="containNews">
+          <div class="news">
+            <h2 class="titleNews">
+              <strong>We are StartUp Creative Kucra Agency</strong>
+            </h2>
+            <p class="textNews">
+              Carefully crafted after analysing the needs of different
+              industries and the design achieves a great balance between purpose
+              & presentation
+            </p>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              class="inputEmail"
+            />
+            <button class="buttonSubmit">SUBSCRIBE</button>
+          </div>
+          <div class="imageNews">
+            <figure class="imgFigureNews">
+              <img
+                src="./images/illustration.svg"
+                alt="CatPC"
+                class="imgNews"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="featuresSection" id="features">
+        <div class="featuresHolder">
+          <h2 class="featuresTitle">Products Features</h2>
+          <p class="grayText">
+            It is a long established fact that a reader will be of a page when
+            established fact looking at its layout
+          </p>
+        </div>
+        <div class="featuresCards">
+          <div class="firstCard">
+            <i class="fa-solid fa-globe fa-2xl"></i>
+            <h4 class="titleCard">Digital Design</h4>
+            <p class="textCard">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="secondCard">
+            <i class="fa-solid fa-brush fa-2xl"></i>
+            <h4 class="titleCard">Unlimited Colors</h4>
+            <p class="textCard">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="thirdCard">
+            <i class="fa-solid fa-chess fa-2xl"></i>
+            <h4 class="titleCard">Strategy Solutions</h4>
+            <p class="textCard">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="teamsSection" id="teams">
+        <div class="teamsText">
+          <h2 class="teamsTitle">
+            We'r dynamic team of talented people of innovative & marketing
+            expert
+          </h2>
+          <p class="grayText">
+            To achieve this, it would be necessary to have uniform grammar,
+            pronunciation and more common words. If several languages of the
+            resulting language.
+          </p>
+        </div>
+        <div class="teamsDescr">
+          <div class="firstDescr">
+            <h4 class="titleDescr">1499+</h4>
+            <p class="textDescr grayText">Complete Projetcs</p>
+            <figure class="teamsFigure">
+              <img src="./images/person1.png" alt="team1" class="teamsIMG" />
+              <i class="twitterTeams fa-brands fa-twitter"></i>
+              <i class="facebookTeams fa-brands fa-facebook"></i>
+              <i class="discordTeams fa-brands fa-discord"></i>
+            </figure>
+            <p>Anna G. Wilhite</p>
+            <p class="grayText">CEO/Founder</p>
+          </div>
+          <div class="secondDescr">
+            <h4 class="titleDescr">1080K</h4>
+            <p class="textDescr grayText">Satisfied Clients</p>
+            <figure class="teamsFigure">
+              <img src="./images/person2.png" alt="team1" class="teamsIMG" />
+              <i class="twitterTeams fa-brands fa-twitter"></i>
+              <i class="facebookTeams fa-brands fa-facebook"></i>
+              <i class="discordTeams fa-brands fa-discord"></i>
+            </figure>
+            <p>William S. Blay</p>
+            <p class="grayText">CTO/Co-Founder</p>
+          </div>
+          <div class="thirdDescr">
+            <h4 class="titleDescr">608</h4>
+            <p class="grayText">Team Members</p>
+            <figure class="teamsFigure">
+              <img src="./images/person3.png" alt="team1" class="teamsIMG" />
+              <i class="twitterTeams fa-brands fa-twitter"></i>
+              <i class="facebookTeams fa-brands fa-facebook"></i>
+              <i class="discordTeams fa-brands fa-discord"></i>
+            </figure>
+            <p>Maria B. Morales</p>
+            <p class="grayText">Web Designer</p>
+          </div>
+          <div class="fourthDescr">
+            <h4 class="titleDescr">252</h4>
+            <p class="textDescr grayText">Employee</p>
+            <figure class="teamsFigure">
+              <img src="./images/person4.png" alt="team1" class="teamsIMG" />
+              <i class="twitterTeams fa-brands fa-twitter"></i>
+              <i class="facebookTeams fa-brands fa-facebook"></i>
+              <i class="discordTeams fa-brands fa-discord"></i>
+            </figure>
+            <p>Luke L. Johnston</p>
+            <p class="grayText">Web Developer</p>
+          </div>
+        </div>
+      </section>
+      <section class="parallaxSection" id="parallax">
+        <div class="parallaxTest">
+          <h4 class="titleParallax">Let's get started with Kucra</h4>
+          <p class="grayText">
+            They are a good way to get you started if you want to build
+            something similar or use from existing apps wich will reduce the
+            cost, efforts and time of the developers.
+          </p>
+          <button class="parallaxButton">Get Started</button>
+        </div>
+      </section>
+      <section class="blogSection" id="blog">
+        <div class="blogFirstPart">
+          <h4 class="blogTitle">Our Blog</h4>
+          <p class="grayText">
+            It is a long established fact that a reader will be of a page when
+            established fact looking at its layout
+          </p>
+        </div>
+        <div class="blogHolder">
+          <div class="firstBlog">
+            <figure class="blogFigure">
+              <img src="./images/blog1.png" alt="" class="blogImage" />
+              <i class="fa-regular fa-user">Calvin Carlo</i>
+              <i class="fa-regular fa-clock">20th March 2021</i>
+            </figure>
+            <h3 class="titleBlog">Doing a cross country road trip</h3>
+            <p class="grayText">
+              We craft digital graphic and dimensional thinking to create
+              category loading brand.
+            </p>
+            <a href="#" class="linkBlog">Read more</a>
+          </div>
+          <div class="secondBlog">
+            <figure class="blogFigure">
+              <img src="./images/blog2.png" alt="" class="blogImage" />
+              <i class="fa-regular fa-user">Calvin Carlo</i>
+              <i class="fa-regular fa-clock">20th March 2021</i>
+            </figure>
+            <h3 class="titleBlog">New exhibition at our Museum</h3>
+            <p class="grayText">
+              We craft digital graphic and dimensional thinking to create
+              category loading brand.
+            </p>
+            <a href="#" class="linkBlog">Read more</a>
+          </div>
+          <div class="thirdBlog">
+            <figure class="blogFigure">
+              <img src="./images/blog3.png" alt="" class="blogImage" />
+              <i class="fa-regular fa-user">Calvin Carlo</i>
+              <i class="fa-regular fa-clock">20th March 2021</i>
+            </figure>
+            <h3 class="titleBlog">Design your apps in your own way</h3>
+            <p class="grayText">
+              We craft digital graphic and dimensional thinking to create
+              category loading brand.
+            </p>
+            <a href="#" class="linkBlog">Read more</a>
+          </div>
+        </div>
+      </section>
+      <section class="priceSection">
+        <div class="textPartPrice">
+          <h3 class="titlePart">
+            <strong>We are digital creative Landing Page</strong>
+          </h3>
+          <div class="textPart">
+            <p class="grayText">
+              The difference between a successful person and others is not a
+              lack of strength, not a lack of knowledge, but rather a lack of
+              will. Composed in a pseudo-Latin language wich more or less
+              pseudo-Latin language corresponds.
+            </p>
+          </div>
+          <div class="firstInfoTextPart">
+            <p>4957</p>
+            <p>1599</p>
+          </div>
+          <div class="secondInfoTextPart">
+            <p class="grayText">Happy User</p>
+            <p class="grayText">Complete Project</p>
+          </div>
+          <button class="learnmorePricing">Learn More</button>
+        </div>
+        <div class="imagePart">
+          <figure class="figImagePrice">
+            <img src="./images/creativity.png" alt="" class="imgPrice" />
+          </figure>
+        </div>
+      </section>
+      <section class="tabSection" id="pricing">
+        <div class="tabTextPart">
+          <h2 class="titleTextTab">Our Pricing</h2>
+          <p class="grayText">
+            It is a long established fact that a reader will be a page when
+            established fact looking at its layout
+          </p>
+        </div>
+        <div class="tabPart">
+          <div class="tab">
+            <div class="tabText">
+              <h6 class="tabTitle">Advanced</h6>
+              <div class="textUnderTitle">
+                <p class="price">$19</p>
+                <p class="time">/Month</p>
+              </div>
             </div>
-        </footer>
-            <i class="buttonUpToPage fa-solid fa-arrow-up" id="buttonUp"></i>
-    </div>
-</body>
-<script>
+            <div class="tabSpec">
+              <div class="Spec">
+                <p class="specName">
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Bandwidth
+                </p>
+                <p class="specName">
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Onlinespace
+                </p>
+                <p class="specName">
+                  <i
+                    class="iconSpec fa-regular fa-circle-xmark"
+                    style="color: #ff0000"
+                  ></i>
+                  SupportENG
+                </p>
+                <p class="specName">
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Domain
+                </p>
+                <p class="specName">
+                  <i
+                    class="iconSpec fa-regular fa-circle-xmark"
+                    style="color: #ff0000"
+                  ></i>
+                  Hidden Fees
+                </p>
+              </div>
+              <div class="Checklist">
+                <p>2GB</p>
+                <p>1GB</p>
+                <p>Yes</p>
+                <p>3</p>
+                <p>No</p>
+              </div>
+            </div>
+            <button class="buttonTab">Join Now</button>
+          </div>
+          <div class="tabTwo">
+            <div class="tabText">
+              <h6 class="tabTitle">Advanced</h6>
+              <div class="textUnderTitle">
+                <p class="price">$19</p>
+                <p class="time">/Month</p>
+              </div>
+            </div>
+            <div class="tabSpec">
+              <div class="Spec">
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Bandwidth
+                </p>
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Onlinespace
+                </p>
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  SupportENG
+                </p>
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Domain
+                </p>
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Hidden Fees
+                </p>
+              </div>
+              <div class="Checklist">
+                <p>2GB</p>
+                <p>1GB</p>
+                <p>Yes</p>
+                <p>3</p>
+                <p>No</p>
+              </div>
+            </div>
+            <button class="buttonTab">Join Now</button>
+          </div>
+          <div class="tab">
+            <div class="tabText">
+              <h6 class="tabTitle">Advanced</h6>
+              <div class="textUnderTitle">
+                <p class="price">$19</p>
+                <p class="time">/Month</p>
+              </div>
+            </div>
+            <div class="tabSpec">
+              <div class="Spec">
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Bandwidth
+                </p>
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Onlinespace
+                </p>
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  SupportENG
+                </p>
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Domain
+                </p>
+                <p>
+                  <i
+                    class="iconSpec fa-regular fa-circle-check"
+                    style="color: #00ff00"
+                  ></i>
+                  Hidden Fees
+                </p>
+              </div>
+              <div class="Checklist">
+                <p>2GB</p>
+                <p>1GB</p>
+                <p>Yes</p>
+                <p>3</p>
+                <p>No</p>
+              </div>
+            </div>
+            <button class="buttonTab">Join Now</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="contact">
+      <div class="footerHolder">
+        <div class="iconsFooter">
+          <i class="facebookFooter fa-brands fa-facebook"></i>
+          <i class="twitterFooter fa-brands fa-twitter"></i>
+          <i class="linkedinFooter fa-brands fa-linkedin"></i>
+          <i class="gplusFooter fa-brands fa-google-plus-g"></i>
+        </div>
+        <div class="rgpdFooter">
+          <p>Terms & Conditions</p>
+          <p>|</p>
+          <p>Privacy Policy</p>
+          <p>|</p>
+          <p>Contact Us</p>
+        </div>
+        <div>
+          <small>2022 &copy; Kucra - Landing Page Template by Pichforest</small>
+        </div>
+      </div>
+    </footer>
+    <i class="buttonUpToPage fa-solid fa-arrow-up" id="buttonUp"></i>
+  </body>
+  <script>
     // Get the button:
     let mybutton = document.getElementById("buttonUp");
-
+    // let ulContainLinks = document.getElementById('ulLinksHeader')
+    // function closeMenu(){
+    //     ulContainLinks.style.display += 'none'
+    // }
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function () {
+      scrollFunction();
+    };
 
     function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
     }
 
     // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    } 
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
 
     mybutton.addEventListener("click", () => {
-        topFunction()
-    })
-</script>
+      topFunction();
+    });
+  </script>
 </html>

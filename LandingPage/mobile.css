@@ -14,7 +14,7 @@
 html,
 body {
   height: 100%;
-  min-height: 1000vh;
+  min-height: 1001vh;
   scroll-behavior: smooth;
   background: radial-gradient(rgb(139, 195, 245), #1294b8);
 }
@@ -146,7 +146,8 @@ main{
 .news{
     display: inherit;
     flex-direction: column;
-    height: 30%;
+    height: 75%;
+    align-items: center;
 }
 .titleNews{
     padding-top: 20px;
@@ -155,19 +156,36 @@ main{
     padding-bottom: 20px;
 }
 .inputEmail{
-    display: inherit;
-    width: 50%;
-    text-align: center;
-    align-self: center;
+display: inherit;
+    width: 90%;
+    height: 11%;
+    z-index: 1;
+    background-color: #deecf5;
+    border: 0;
+    border-radius: 30px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.inputEmail:focus{
+    outline: none;
+
 }
 .buttonSubmit{
-    display: inherit;
-    width: 50%;
-    justify-content: center;
-    align-self: center;
+    width: 25%;
+    position: relative;
+    z-index: 2;
+    left: 33%;
     border: 0;
     border-radius: 25px;
-
+    height: 11%;
+    background-color: #4094b9;
+    color: white;
+    bottom: 11%;
+    transition-property: background-color;
+    transition-duration: 2s;
+}
+.buttonSubmit:hover{
+    background-color: #5db0d4;
 }
 .imageNews{
     display: inherit;
@@ -207,12 +225,13 @@ main{
     height: 100%;
     color: white;
     justify-content: space-evenly;
+    align-items: center;
 }
 .firstCard{
     display: inherit;
     flex-direction: column;
     border-radius: 10px;
-    width: 100%;
+    width: 90%;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
     height: 30%;
     justify-content: center;
@@ -221,7 +240,7 @@ main{
     display: inherit;
     flex-direction: column;
     border-radius: 10px;
-    width: 100%;
+    width: 90%;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
     height: 30%;
     justify-content: center;
@@ -230,7 +249,7 @@ main{
     display: inherit;
     flex-direction: column;
     border-radius: 10px;
-    width: 100%;
+    width: 90%;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
     height: 30%;
     justify-content: center;
@@ -249,7 +268,7 @@ main{
     flex-direction: column;
     height: 61%;
     background-color: white;
-    padding-bottom: 20px;
+    padding-bottom: 35px;
 }
 .teamsText{
     display: inherit;
@@ -262,6 +281,8 @@ main{
     display: inherit;
     flex-direction: column;
     height: 100%;
+    width: 90%;
+    align-self: center;
 }
 .firstDescr{
     display: inherit;
@@ -343,7 +364,7 @@ main{
 .parallaxTest{
     display: inherit;
     justify-content: center;
-    width: 60%;
+    width: 70%;
     flex-direction: column;
     color: white;
 }
@@ -395,6 +416,7 @@ main{
     justify-content: space-evenly;
     width: 100%;
     flex-direction: column;
+    text-align: center;
 }
 .firstBlog{
     display: inherit;
@@ -468,12 +490,13 @@ main{
     display: inherit;
     flex-direction: column;
     width: 100%;
+    padding-bottom: 17px;
 }
 .titlePart{
     font-size: 24px;
     padding-bottom: 45px;
     text-align: center;
-    padding-top: 24px;
+    padding-top: 35px;
 }
 .textPart{
     padding-bottom: 40px;
@@ -506,6 +529,8 @@ main{
     display: inherit;
     height: 45%;
     width: 100%;
+    padding-bottom: 17px;
+
 }
 .figImagePrice{
     display: inherit;
@@ -519,7 +544,7 @@ main{
 .tabSection{
     display: inherit;
     flex-direction: column;
-    height: 60%;
+    height: 75%;
     align-items: center;
     justify-content: space-evenly;
     background-color: #f3f3f3;
@@ -544,7 +569,7 @@ main{
     border-radius: 5%;
     justify-content: space-evenly;
     box-shadow: 0px 0px 5px gray;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 .tabTwo{
     display: inherit;
@@ -555,6 +580,8 @@ main{
     border-radius: 5%;
     justify-content: space-evenly;
     box-shadow: 0px 0px 5px gray;
+    margin-bottom: 15px;
+
     /* position: relative; */
     /* bottom: 30px; */
 }
@@ -575,7 +602,7 @@ main{
     text-align: end;
 }
 .price{
-    color: blue;
+    color: #5a90fe;
     font-size: 50px;
 }
 .time{

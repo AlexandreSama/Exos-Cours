@@ -12,8 +12,6 @@
 }
   
 html, body {
-    /* height: 100%;
-    min-height: 475vh; */
     scroll-behavior: smooth;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
 }
@@ -28,21 +26,18 @@ html, body {
 .grayText{
     color: #9c9d9f;
 }
+
 /* HEADER */
 header{
-    display: inherit;
+    display: flex;
     flex-direction: row;
-    width: 100%;
-    height: 2%;
-    align-items: center;
     background: transparent;
     color: white;
+    justify-content: space-around;
 }
 nav{
     display: inherit;
     flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
 }
 .divLogoHeader{
     display: inherit;
@@ -50,14 +45,11 @@ nav{
 }
 .divLinksHeader{
     display: inherit;
-    width: 50%;
     justify-content: center;
 }
 .ulLinksHeader{
     display: inherit;
     flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
     list-style-type: none;
     align-items: center;
 }
@@ -83,26 +75,17 @@ li:hover{
 input[type="checkbox"]{
     display: none;
 }
-/* MAIN */
-main{
-    display: inherit;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
 
-/* first section*/
+/* news Section */
 .newsSection{
-    display: inherit;
-    width: 100%;
-    height: 69%;
+    display: flex;
+    height: 100vh;
     justify-content: center;
     background: transparent;
 
 }
 .containNews{
     display: inherit;
-    width: 100%;
     align-items: center;
     height: 92%;
     justify-content: center;
@@ -158,7 +141,6 @@ main{
 .buttonSubmit:hover{
     background-color: #5db0d4;
 }
-
 .imageNews{
     display: inherit;
     width: 42%;
@@ -180,10 +162,10 @@ main{
 
 /* second Section */
 .featuresSection{
-    display: inherit;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    height: 47%;
+    height: 70vh;
     background-color: white;
 }
 .featuresHolder{
@@ -253,10 +235,10 @@ main{
 
 /* Third section */
 .teamsSection{
-    display: inherit;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50%;
+    height: 70vh;
     padding-bottom: 25px;
     background-color: white;
 }
@@ -360,8 +342,8 @@ main{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/parallax.png);
     background-attachment: fixed;
     background-size: cover;
-    display: inherit;
-    height: 25%;
+    display: flex;
+    height: 50vh;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -399,7 +381,7 @@ main{
 
 /* Five Section */
 .blogSection{
-    display: inherit;
+    display: flex;
     flex-direction: column;
     height: 24%;
     padding-top: 30px;
@@ -483,9 +465,9 @@ main{
 /* Six Section */
 
 .priceSection{
-    display: inherit;
+    display: flex;
     flex-direction: row;
-    height: 30%;
+    height: 50vh;
     align-items: center;
     justify-content: space-evenly;
     background-color: white;
@@ -538,9 +520,9 @@ main{
 
 /* Seven Section */
 .tabSection{
-    display: inherit;
+    display: flex;
     flex-direction: column;
-    height: 60%;
+    height: 70vh;
     align-items: center;
     justify-content: space-evenly;
     background-color: #f3f3f3;
@@ -630,13 +612,14 @@ main{
     background-color: #1294b8;
     color: white;
 }
+
 /* FOOTER */
 
 footer{
-    display: inherit;
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 3%;
+    height: 15vh;
     align-items: center;
     background-color: #26272b;
     color: gray;
