@@ -1,1 +1,9 @@
-OBJECT FIT CONNARD
+- CV tjr un titre
+- Phrase d'accroche
+- Photo obligatoire
+- Liens hypertexte dans coordonnées (linkedin, github, email, portfolio?)
+- Atouts (soft skills)
+- Langue : Référentiel Européen
+- Centre d'Intérêt : être spécifique
+- Expériences pro en dernier, Compétences en premier puis formation
+- 
