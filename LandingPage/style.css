@@ -798,6 +798,7 @@
   .containNews {
     display: inherit;
     flex-direction: column;
+    width: 100%;
   }
   .news {
     display: inherit;
@@ -819,7 +820,7 @@
   }
   .inputEmail {
     display: inherit;
-    width: 51vh;
+    width: 36vh;
     height: 5vh;
     z-index: 1;
     position: relative;
