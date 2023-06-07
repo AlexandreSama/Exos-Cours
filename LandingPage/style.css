@@ -15,7 +15,7 @@
   color: #9c9d9f;
 }
 
-@media (min-width: 1081px) {
+@media (min-width: 768px) {
   html,
   body {
     scroll-behavior: smooth;
