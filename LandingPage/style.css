@@ -10,6 +10,11 @@
   box-sizing: border-box;
   font-family: Poppins;
 }
+html,
+  body {
+    scroll-behavior: smooth;
+    background: radial-gradient(rgb(139, 195, 245), #1294b8);
+  }
 
 .grayText {
   color: #9c9d9f;
@@ -18,13 +23,9 @@ section{
   min-height: 100vh;
 }
 
+
 /* Large Screen (Default) */
 
-html,
-  body {
-    scroll-behavior: smooth;
-    background: radial-gradient(rgb(139, 195, 245), #1294b8);
-  }
   /* HEADER */
   .home{
     min-height: 60px;
@@ -155,8 +156,9 @@ html,
     width: 100%;
   }
   .imgNews {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
+    height: 100%;
   }
 
   /* second Section */
@@ -466,7 +468,7 @@ html,
   .firstInfoTextPart {
     display: inherit;
     justify-content: space-between;
-    width: 44%;
+    width: 49%;
     font-size: 25px;
   }
   .secondInfoTextPart {
@@ -802,13 +804,25 @@ html,
     border-radius: 50%;
   }
   .teamsIMG {
+    filter: grayscale(0%);
     width: 100%;
     border-radius: 50%;
     position: relative;
     z-index: 0;
-    filter: grayscale(100%);
-    transition: transform 1s, display 1s, color;
   }
+
+  .teams-member-socials {
+    position: absolute;
+    top: 90px;
+    left: 25px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 1;
+  }
+
   /* Third Section */
   .parallaxTest {
     width: 70%;
