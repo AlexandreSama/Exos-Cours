@@ -14,14 +14,21 @@
 .grayText {
   color: #9c9d9f;
 }
+section{
+  min-height: 100vh;
+}
 
-@media (min-width: 1024px) {
-  html,
+/* Large Screen (Default) */
+
+html,
   body {
     scroll-behavior: smooth;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
   }
   /* HEADER */
+  .home{
+    min-height: 60px;
+  }
   header {
     display: flex;
     flex-direction: row;
@@ -78,26 +85,24 @@
   /* news Section */
   .newsSection {
     display: flex;
-    height: 100vh;
     justify-content: center;
     background: transparent;
+    align-items: center;
   }
   .containNews {
     display: inherit;
     align-items: center;
-    height: 92%;
     justify-content: center;
   }
   .news {
     display: inherit;
     flex-direction: column;
-    width: 50%;
+    width: 35%;
     text-align: left;
     justify-content: center;
   }
   .titleNews {
-    font-size: 55px;
-    width: 61vh;
+    font-size: 68px;
   }
   .textNews {
     padding-top: 10px;
@@ -107,28 +112,30 @@
   }
   .formHolder{
     display: inherit;
-    width: 75%;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: end;
+    position: relative;
+    background-color: #deecf5;
+    width: 80%;
+    border-radius: 30px;
+    border: 0;
   }
   .inputEmail {
     display: inherit;
-    width: 51vh;
+    width: 67%;
     height: 5vh;
-    z-index: 1;
     background-color: #deecf5;
     border: 0;
     border-radius: 30px;
-    padding-left: 10px;
+    padding-left: 19px;
+    font-size: 15px;
   }
   .inputEmail:focus {
     outline: none;
   }
   .buttonSubmit {
+    top: 0px;
+    right: 0px;
     width: 15vh;
     position: absolute;
-    z-index: 2;
     border: 0;
     border-radius: 25px;
     height: 5vh;
@@ -136,13 +143,15 @@
     color: white;
     transition-property: background-color;
     transition-duration: 2s;
+    font-size: 15px;
   }
   .buttonSubmit:hover {
     background-color: #5db0d4;
   }
   .imageNews {
     display: inherit;
-    width: 54%;
+    width: 42%;
+    height: 73%;
     justify-content: center;
     bottom: 33px;
     position: relative;
@@ -164,6 +173,7 @@
     flex-direction: column;
     align-items: center;
     height: 70vh;
+    min-height: 70vh;
     background-color: white;
   }
   .featuresHolder {
@@ -181,7 +191,7 @@
     width: 100%;
     justify-content: center;
     text-align: center;
-    height: 58%;
+    height: 60%;
     padding-top: 50px;
     color: white;
   }
@@ -244,8 +254,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 70vh;
-    padding-bottom: 25px;
     background-color: white;
   }
   .teamsText {
@@ -263,31 +271,14 @@
   }
   .teamsDescr {
     display: inherit;
-    width: 100%;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+    padding: 0 10%;
   }
-  .firstDescr {
+  .teams-member-container {
     display: inherit;
     flex-direction: column;
-    width: 15%;
-    align-items: center;
-  }
-  .secondDescr {
-    display: inherit;
-    flex-direction: column;
-    width: 15%;
-    align-items: center;
-  }
-  .thirdDescr {
-    display: inherit;
-    flex-direction: column;
-    width: 15%;
-    align-items: center;
-  }
-  .fourthDescr {
-    display: inherit;
-    flex-direction: column;
-    width: 15%;
     align-items: center;
   }
   .titleDescr {
@@ -296,50 +287,47 @@
   .textDescr {
     font-size: 15px;
   }
+  .teams-member-profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .teamsFigure {
-    padding-top: 15px;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
     border-radius: 50%;
   }
   .teamsIMG {
+    object-fit: cover;
+    object-position: 50% 50%;
     width: 100%;
-    border-radius: 50%;
-    position: relative;
-    z-index: 0;
+    height: 100%;
     filter: grayscale(100%);
-    transition: transform 1s, display 1s, color;
+    transition: all 600ms ease-out;
   }
-  .twitterTeams {
-    display: none;
-    position: relative;
-    left: 10%;
-    bottom: 45%;
-    z-index: 2;
+  .teams-member-socials {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transition: all 600ms ease-out;
   }
-  .facebookTeams {
-    display: none;
-    position: relative;
-    left: 3%;
-    bottom: 75%;
-    z-index: 2;
-    color: gray;
-  }
-  .discordTeams {
-    display: none;
-    position: relative;
-    right: 5%;
-    bottom: 60%;
-    z-index: 2;
-    color: gray;
-  }
-  .teamsIMG:hover {
+
+  .teams-member-profile:hover .teamsIMG {
     filter: grayscale(0%);
     transform: scale(1.1);
   }
-  .teamsIMG:hover ~ .fa-brands {
-    display: var(--fa-display, inline-block);
-    transform: scale(1.1);
-    color: gray;
+  .teams-member-profile:hover .teams-member-socials {
+    top: 90px;
+    left: 25px;
+    opacity: 1;
   }
 
   /* Fourth Section */
@@ -390,9 +378,9 @@
   .blogSection {
     display: flex;
     flex-direction: column;
-    height: 24%;
     padding-top: 30px;
     background-color: white;
+    min-height: 66vh;
   }
   .blogFirstPart {
     display: inherit;
@@ -475,6 +463,7 @@
     display: flex;
     flex-direction: row;
     height: 50vh;
+    min-height: 50vh;
     align-items: center;
     justify-content: space-evenly;
     background-color: white;
@@ -482,7 +471,9 @@
   .textPartPrice {
     display: inherit;
     flex-direction: column;
-    width: 27%;
+    width: 40%;
+    height: 100%;
+    justify-content: center;
   }
   .titlePart {
     font-size: 24px;
@@ -530,6 +521,7 @@
   .tabSection {
     display: flex;
     flex-direction: column;
+    min-height: 70vh;
     height: 70vh;
     align-items: center;
     justify-content: space-evenly;
@@ -628,7 +620,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 15vh;
+    height: 22vh;
     align-items: center;
     background-color: #26272b;
     color: gray;
@@ -681,68 +673,24 @@
     background-color: #26272b;
     color: white;
   }
-}
+
 /*RESPONSIVE */
-@media (max-width: 1024px) {
-  html,
-  body {
-    scroll-behavior: smooth;
-    background: radial-gradient(rgb(139, 195, 245), #1294b8);
-  }
+@media (max-width: 1122px) {
+
   /*HEADER */
   header {
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    background: transparent;
-    color: white;
-    justify-content: space-between;
-  }
-  nav {
-    display: inherit;
-    flex-direction: row;
-    align-items: center;
-  }
-  .divLogoHeader {
-    display: inherit;
-    font-size: 25px;
   }
   .divLinksHeader {
     display: none;
     width: 50%;
-    justify-content: center;
   }
   .ulLinksHeader {
     display: none;
-    flex-direction: row;
     justify-content: space-around;
-    width: 100%;
-    list-style-type: none;
-    align-items: center;
-  }
-  .linksHeader {
-    text-decoration: none;
-    color: white;
-    transition-property: color;
-    transition-duration: 1s;
-  }
-  .linksHeader:hover {
-    color: #9c9d9f;
-  }
-
-  li:hover {
-    color: #9c9d9f;
   }
   .divIconsHeader {
     display: none;
-    justify-content: space-between;
-    width: 5%;
-    align-items: center;
-  }
-
-  input[type="checkbox"] {
-    display: none;
-    height: 0;
   }
 
   .burger {
@@ -787,183 +735,86 @@
     display: flex;
     flex-direction: column;
   }
-  .newsSection {
-    display: flex;
-    height: 99vh;
-    justify-content: center;
-    text-align: center;
-  }
   .containNews {
-    display: inherit;
     flex-direction: column;
-    width: 100%;
+    height: 100%;
   }
   .news {
-    display: inherit;
-    flex-direction: column;
     align-items: center;
     height: 41vh;
+    width: 100%;
   }
   .titleNews {
     padding-top: 20px;
+    font-size: 30px;
+    text-align: center;
   }
   .textNews {
     padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
   }
+
   .formHolder{
-    display: inherit;
     width: 100%;
-    flex-direction: column;
-    align-items: center;
   }
-  .inputEmail {
-    display: inherit;
-    width: 36vh;
-    height: 5vh;
-    z-index: 1;
-    position: relative;
-    background-color: #deecf5;
-    border: 0;
-    border-radius: 30px;
-    padding-left: 10px;
-  }
-  .inputEmail:focus {
-    outline: none;
-  }
-  .buttonSubmit {
-    width: 15vh;
-    position: relative;
-    z-index: 2;
-    border: 0;
-    border-radius: 25px;
-    height: 5vh;
-    background-color: #4094b9;
-    color: white;
-    transition-property: background-color;
-    transition-duration: 2s;
-  }
-  .buttonSubmit:hover {
-    background-color: #5db0d4;
-  }
+
   .imageNews {
-    display: inherit;
     height: 53vh;
-  }
-  .imgFigureNews {
-    display: inherit;
-    height: 100%;
-    width: 100%;
-  }
-  .imgNews {
     width: 100%;
   }
 
   /* Second Section */
   .featuresSection {
-    display: flex;
-    flex-direction: column;
     height: 100vh;
-    background-color: white;
   }
   .featuresHolder {
     text-align: center;
     padding-top: 20px;
-  }
-  .featuresTitle {
-    padding-bottom: 10px;
+    width: 100%;
   }
   .featuresCards {
-    display: inherit;
     flex-direction: column;
-    width: 100%;
-    text-align: center;
     height: 100%;
-    color: white;
     justify-content: space-evenly;
     align-items: center;
   }
   .firstCard {
-    display: inherit;
-    flex-direction: column;
-    border-radius: 10px;
     width: 90%;
-    background: radial-gradient(rgb(139, 195, 245), #1294b8);
     height: 30%;
-    justify-content: center;
+    margin: 0;
   }
   .secondCard {
-    display: inherit;
-    flex-direction: column;
     border-radius: 10px;
     width: 90%;
-    background: radial-gradient(rgb(139, 195, 245), #1294b8);
     height: 30%;
-    justify-content: center;
+    margin: 0;
   }
   .thirdCard {
-    display: inherit;
-    flex-direction: column;
     border-radius: 10px;
     width: 90%;
-    background: radial-gradient(rgb(139, 195, 245), #1294b8);
     height: 30%;
-    justify-content: center;
-  }
-  .titleCard {
-    padding-top: 35px;
-    font-size: 25px;
-  }
-  .textCard {
-    padding-top: 15px;
+    margin: 0;
   }
 
   /* Second Section */
   .teamsSection {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
     padding-bottom: 35px;
   }
   .teamsText {
-    display: inherit;
-    flex-direction: column;
-    text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    width: 100%;
   }
   .teamsDescr {
-    display: inherit;
     flex-direction: column;
     height: 100%;
     width: 90%;
     align-self: center;
   }
-  .firstDescr {
-    display: inherit;
-    flex-direction: column;
+  .teams-member-container {
     width: 100%;
-    align-items: center;
     padding-bottom: 25px;
-  }
-  .secondDescr {
-    display: inherit;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    padding-bottom: 25px;
-  }
-  .thirdDescr {
-    display: inherit;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    padding-bottom: 25px;
-  }
-  .fourthDescr {
-    display: inherit;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
   }
   .teamsFigure {
     padding-top: 15px;
@@ -977,342 +828,103 @@
     filter: grayscale(100%);
     transition: transform 1s, display 1s, color;
   }
-  .twitterTeams {
-    display: none;
-    position: relative;
-    left: 20%;
-    bottom: 50%;
-    z-index: 2;
-  }
-  .facebookTeams {
-    display: none;
-    position: relative;
-    left: 40%;
-    bottom: 50%;
-    z-index: 2;
-  }
-  .discordTeams {
-    display: none;
-    position: relative;
-    left: 59%;
-    bottom: 50%;
-    z-index: 2;
-  }
-
   /* Third Section */
-
-  .parallaxSection {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(./images/parallax.png);
-    background-attachment: fixed;
-    background-size: cover;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-  }
   .parallaxTest {
-    display: inherit;
-    justify-content: center;
     width: 70%;
-    flex-direction: column;
-    color: white;
-  }
-  .titleParallax {
-    font-size: 30px;
   }
   .parallaxButton {
-    align-self: center;
-    padding: 14px;
-    position: relative;
-    margin-top: 25px;
     width: 50%;
-    background: transparent;
-    border-radius: 10px;
-    border: 1px solid white;
-    color: white;
     transition-property: color, background-color, top;
     transition-duration: 1s;
   }
 
   /* Blog Section */
-  .blogSection {
-    display: flex;
-    flex-direction: column;
-    padding-top: 30px;
-    background-color: white;
-  }
   .blogFirstPart {
-    display: inherit;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 40px;
     width: 80%;
-    align-self: center;
-    text-align: center;
-  }
-  .blogTitle {
-    font-size: 30px;
   }
   .blogHolder {
-    display: inherit;
-    justify-content: space-evenly;
-    width: 100%;
     flex-direction: column;
     text-align: center;
   }
   .firstBlog {
-    display: inherit;
-    flex-direction: column;
     width: 100%;
-    height: 85%;
     padding-bottom: 15px;
   }
   .secondBlog {
-    display: inherit;
-    flex-direction: column;
     width: 100%;
-    height: 85%;
     padding-bottom: 15px;
   }
   .thirdBlog {
-    display: inherit;
-    flex-direction: column;
     width: 100%;
-    height: 85%;
-  }
-  .blogFigure {
-    display: inherit;
-    height: 74%;
-    flex-direction: column;
-    position: relative;
-    z-index: 0;
-  }
-  .fa-user {
-    display: none;
-    position: absolute;
-    left: 5%;
-    top: 15%;
-  }
-  .fa-clock {
-    display: none;
-    position: absolute;
-    left: 5%;
-    top: 25%;
-  }
-  .blogImage {
-    height: 100%;
-  }
-  .blogImage:hover {
-    filter: grayscale(100%);
-  }
-
-  .blogImage:hover ~ .fa-regular {
-    display: var(--fa-display, inline-block);
-    color: white;
-  }
-  .titleBlog {
-    padding-bottom: 10px;
-  }
-  .linkBlog {
-    padding-top: 10px;
-    text-decoration: none;
-    color: black;
   }
 
   /* Price Section */
   .priceSection {
-    display: flex;
     flex-direction: column;
     height: 100vh;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: white;
   }
   .textPartPrice {
-    display: inherit;
-    flex-direction: column;
     width: 100%;
     padding-bottom: 17px;
   }
   .titlePart {
-    font-size: 24px;
-    padding-bottom: 45px;
     text-align: center;
     padding-top: 35px;
   }
   .textPart {
-    padding-bottom: 40px;
     text-align: center;
   }
   .firstInfoTextPart {
-    display: inherit;
     justify-content: space-around;
-    font-size: 25px;
+    width: 100%;
   }
   .secondInfoTextPart {
-    display: inherit;
     justify-content: space-evenly;
-    padding-bottom: 30px;
+    width: 100%;
   }
   .learnmorePricing {
-    display: inherit;
-    width: 30%;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #5f8fff;
-    color: white;
     align-self: center;
+    max-width: 40%;
   }
   .imagePart {
-    display: inherit;
     height: 45%;
     width: 100%;
     padding-bottom: 17px;
   }
-  .figImagePrice {
-    display: inherit;
-    width: 100%;
-  }
-  .imgPrice {
-    width: 100%;
-  }
 
   /* Tabs Section */
   .tabSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #f3f3f3;
+    min-height: 120vh;
   }
   .tabTextPart {
-    text-align: center;
     padding-bottom: 20px;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   .tabPart {
-    display: inherit;
     flex-direction: column;
     width: 80%;
     height: 85%;
     justify-content: space-evenly;
   }
   .tab {
-    display: inherit;
-    flex-direction: column;
-    background-color: white;
     width: 100%;
-    height: 100%;
-    border-radius: 5%;
-    justify-content: space-evenly;
-    box-shadow: 0px 0px 5px gray;
     margin-bottom: 15px;
   }
   .tabTwo {
-    display: inherit;
-    flex-direction: column;
-    background-color: white;
     width: 100%;
     height: 100%;
-    border-radius: 5%;
-    justify-content: space-evenly;
-    box-shadow: 0px 0px 5px gray;
     margin-bottom: 15px;
-  }
-  .tabText {
-    display: inherit;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tabTitle {
-    font-size: 15px;
-  }
-  .textUnderTitle {
-    display: inherit;
-    flex-direction: row;
-    width: 36%;
-    font-size: 20px;
-    text-align: end;
-  }
-  .price {
-    color: #5a90fe;
-    font-size: 50px;
-  }
-  .time {
-    align-self: self-end;
-  }
-  .tabSpec {
-    display: inherit;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 48%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .Spec,
-  .Checklist {
-    display: inherit;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .buttonTab {
-    display: inherit;
-    align-self: center;
-    justify-content: center;
-    width: 92%;
-    background-color: #5a8fff;
-    color: white;
-    height: 10%;
-    align-items: center;
+    bottom: 0;
   }
 
   /* FOOTER */
 
-  footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 22vh;
-    align-items: center;
-    background-color: #26272b;
-    color: gray;
-    text-align: center;
-  }
   .footerHolder {
-    display: inherit;
-    flex-direction: column;
     width: 80%;
   }
-  .iconsFooter {
-    display: inherit;
-    justify-content: space-around;
-    padding-bottom: 10px;
-  }
-  .facebookFooter {
-    border-radius: 50%;
-    border: solid gray 2px;
-    padding: 5px;
-  }
-  .twitterFooter {
-    border-radius: 50%;
-    border: solid gray 2px;
-    padding: 5px;
-  }
-  .linkedinFooter {
-    border-radius: 50%;
-    border: solid gray 2px;
-    padding: 5px;
-  }
-  .gplusFooter {
-    border-radius: 50%;
-    border: solid gray 2px;
-    padding: 5px;
-  }
+
   .rgpdFooter {
     display: inherit;
     justify-content: space-around;
@@ -1321,13 +933,6 @@
 
   /* Button UpToPage */
   .buttonUpToPage {
-    position: fixed;
-    left: 85%;
-    top: 90%;
-    padding: 20px;
-    border-radius: 50%;
-    border: solid gray 2px;
-    background-color: #26272b;
-    color: white;
+    left: 0%;
   }
 }
