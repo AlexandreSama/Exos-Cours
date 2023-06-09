@@ -87,7 +87,6 @@ html,
     display: flex;
     justify-content: center;
     background: transparent;
-    align-items: center;
   }
   .containNews {
     display: inherit;
@@ -98,8 +97,6 @@ html,
     display: inherit;
     flex-direction: column;
     width: 35%;
-    text-align: left;
-    justify-content: center;
   }
   .titleNews {
     font-size: 68px;
@@ -151,19 +148,14 @@ html,
   .imageNews {
     display: inherit;
     width: 42%;
-    height: 73%;
-    justify-content: center;
     bottom: 33px;
     position: relative;
   }
   .imgFigureNews {
-    display: inherit;
     width: 100%;
-    position: relative;
-    height: 100%;
   }
   .imgNews {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
   }
 
@@ -201,10 +193,8 @@ html,
     border-radius: 10px;
     width: 20%;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
-    height: 100%;
     justify-content: center;
     margin-right: 25px;
-    position: relative;
     transition: all 300ms;
   }
   .firstCard:hover,
@@ -216,29 +206,23 @@ html,
   .secondCard {
     display: inherit;
     flex-direction: column;
-    align-items: center;
     border-radius: 10px;
     padding: 31px;
     width: 20%;
-    height: 100%;
     justify-content: center;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
     margin-right: 25px;
-    position: relative;
     transition: all 300ms;
   }
   .thirdCard {
     display: inherit;
     flex-direction: column;
-    align-items: center;
     border-radius: 10px;
     padding: 31px;
     width: 20%;
-    height: 100%;
     justify-content: center;
     background: radial-gradient(rgb(139, 195, 245), #1294b8);
     margin-right: 25px;
-    position: relative;
     transition: all 300ms;
   }
   .titleCard {
@@ -338,15 +322,12 @@ html,
     background-attachment: fixed;
     background-size: cover;
     display: flex;
-    height: 50vh;
-    flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
   }
   .parallaxTest {
     display: inherit;
-    justify-content: center;
     width: 60%;
     flex-direction: column;
     color: white;
