@@ -479,10 +479,10 @@ section{
   }
   .learnmorePricing {
     display: inherit;
-    width: 30%;
+    width: 17%;
     justify-content: center;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #5f8fff;
     color: white;
     border: 0;
