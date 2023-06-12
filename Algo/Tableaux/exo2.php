@@ -1,5 +1,10 @@
 <?php
 
+    // This is a PHP code that creates an array containing all the letters of the alphabet and an
+    // empty array. It then loops through each element of and checks if it is a vowel (a, e,
+    // i, o, u, y). If it is a vowel, it adds it to using the `array_push()` function. Finally, it
+    // prints the contents of using `var_dump()`. The output will be an array containing all the
+    // vowels in the alphabet.
     $tab = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     $tab2 = [];
 

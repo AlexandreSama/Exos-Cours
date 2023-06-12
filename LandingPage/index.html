@@ -553,58 +553,57 @@
             (window.innerWidth || document.documentElement.clientWidth)
         );
       }
+    function changeStyleTeams(element1, element2) {
+        element1.style.filter = "grayscale(0%)";
+        element1.style.transform = "scale(1.1)";
+        element2.style.top = '90px';
+        element2.style.left = '25px';
+        element2.style.opacity = '1';
+    }
+    function undoChangeStyleTeams(element1, element2){
+        element1.style.filter = null
+        element1.style.transform = null;
+        element2.style.top = null;
+        element2.style.left = null;
+        element2.style.opacity = null;
+        element2.style.opacity = null;
+    }
 
       //On ajoute un EventListener pour le scroll du document
     document.addEventListener("scroll", () => {
 
       //Une série de If (Obligatoire ?) pour chaque itération de la classe afin de changer les valeurs s'ils sont visible
       if(isInViewport(document.getElementById('profile1')) && document.body.clientWidth <= 1122){
-        document.getElementsByClassName('teamsIMG')[0].style.filter = "grayscale(0%)";
-        document.getElementsByClassName('teamsIMG')[0].style.transform = "scale(1.1)";
-        document.getElementsByClassName('teams-member-socials')[0].style.top = '90px';
-        document.getElementsByClassName('teams-member-socials')[0].style.left = '25px';
-        document.getElementsByClassName('teams-member-socials')[0].style.opacity = '1';
-        
+        changeStyleTeams(document.getElementsByClassName('teamsIMG')[0], document.getElementsByClassName('teams-member-socials')[0])
+      
       }else if(!isInViewport(document.getElementById('profile1')) && document.body.clientWidth <= 1122){
-        document.getElementsByClassName('teamsIMG')[0].style.filter = "grayscale(100%)";
-        document.getElementsByClassName('teams-member-socials')[0].style.opacity = '0';
+        undoChangeStyleTeams(document.getElementsByClassName('teamsIMG')[0], document.getElementsByClassName('teams-member-socials')[0])
         console.log('Bloqué')
+        
       }
       if (isInViewport(document.getElementById('profile2')) && document.body.clientWidth <= 1122){
-        document.getElementsByClassName('teamsIMG')[1].style.filter = "grayscale(0%)";
-        document.getElementsByClassName('teamsIMG')[1].style.transform = "scale(1.1)";
-        document.getElementsByClassName('teams-member-socials')[1].style.top = '90px';
-        document.getElementsByClassName('teams-member-socials')[1].style.left = '25px';
-        document.getElementsByClassName('teams-member-socials')[1].style.opacity = '1';
+        changeStyleTeams(document.getElementsByClassName('teamsIMG')[1], document.getElementsByClassName('teams-member-socials')[1])
 
-      }else if(!isInViewport(document.getElementById('profile1')) && document.body.clientWidth <= 1122){
-        document.getElementsByClassName('teamsIMG')[1].style.filter = "grayscale(100%)";
-        document.getElementsByClassName('teams-member-socials')[1].style.opacity = '0';
+      }else if(!isInViewport(document.getElementById('profile2')) && document.body.clientWidth <= 1122){
+        undoChangeStyleTeams(document.getElementsByClassName('teamsIMG')[1], document.getElementsByClassName('teams-member-socials')[1])
         console.log('Bloqué')
+
       }
       if(isInViewport(document.getElementById('profile3')) && document.body.clientWidth <= 1122){
-        document.getElementsByClassName('teamsIMG')[2].style.filter = "grayscale(0%)";
-        document.getElementsByClassName('teamsIMG')[2].style.transform = "scale(1.1)";
-        document.getElementsByClassName('teams-member-socials')[2].style.top = '90px';
-        document.getElementsByClassName('teams-member-socials')[2].style.left = '25px';
-        document.getElementsByClassName('teams-member-socials')[2].style.opacity = '1';
+        changeStyleTeams(document.getElementsByClassName('teamsIMG')[2], document.getElementsByClassName('teams-member-socials')[2])
 
-      }else if(!isInViewport(document.getElementById('profile1')) && document.body.clientWidth <= 1122){
-        document.getElementsByClassName('teamsIMG')[2].style.filter = "grayscale(100%)";
-        document.getElementsByClassName('teams-member-socials')[2].style.opacity = '0';
+      }else if(!isInViewport(document.getElementById('profile3')) && document.body.clientWidth <= 1122){
+        undoChangeStyleTeams(document.getElementsByClassName('teamsIMG')[2], document.getElementsByClassName('teams-member-socials')[2])
         console.log('Bloqué')
+
       }
       if(isInViewport(document.getElementById('profile4')) && document.body.clientWidth <= 1122){
-        document.getElementsByClassName('teamsIMG')[3].style.filter = "grayscale(0%)";
-        document.getElementsByClassName('teamsIMG')[3].style.transform = "scale(1.1)";
-        document.getElementsByClassName('teams-member-socials')[3].style.top = '90px';
-        document.getElementsByClassName('teams-member-socials')[3].style.left = '25px';
-        document.getElementsByClassName('teams-member-socials')[3].style.opacity = '1';
+        changeStyleTeams(document.getElementsByClassName('teamsIMG')[3], document.getElementsByClassName('teams-member-socials')[3])
 
-      }else if(!isInViewport(document.getElementById('profile1')) && document.body.clientWidth <= 1122){
-        document.getElementsByClassName('teamsIMG')[3].style.filter = "grayscale(100%)";
-        document.getElementsByClassName('teams-member-socials')[3].style.opacity = '0';
+      }else if(!isInViewport(document.getElementById('profile4')) && document.body.clientWidth <= 1122){
+        undoChangeStyleTeams(document.getElementsByClassName('teamsIMG')[3], document.getElementsByClassName('teams-member-socials')[3])
         console.log('Bloqué')
+
       }
 
     });
