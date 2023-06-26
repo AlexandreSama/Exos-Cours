@@ -241,6 +241,8 @@ function main() {
         }
 
         if (matchNul(pions)) {
+          document.querySelector(".gameScore1").innerHTML = "";
+          document.querySelector(".gameScore2").innerHTML = "";
           afficheur.sendMessage(
             'Match Nul ! <br/> <a href="index.html">Rejouer</a>'
           );
