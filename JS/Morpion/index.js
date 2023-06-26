@@ -7,14 +7,15 @@ function setSymbol(btn, symbole) {
 }
 
 /**
- * The function checks if a player has won in a game of tic-tac-toe and highlights the winning
- * combination of squares.
+ * The function checks if a player has won in a game of tic-tac-toe and 
+ * highlights the winning combination of squares.
  * @param pions - an array of HTML elements representing the game board squares
  * @param joueurs - an array containing the two players' symbols (e.g. ["X", "O"])
  * @param tour - The current player's turn, represented by an index number in the array of players.
- * @returns a boolean value indicating whether or not a winning combination of pions has been found for
- * the current player (specified by the "tour" parameter). If a winning combination is found, the
- * function also changes the background color of the winning pions to green.
+ * @returns a boolean value indicating whether or not a winning combination 
+ * of pions has been found for the current player (specified by the "tour" 
+ * parameter). If a winning combination is found, the function also changes
+ * the background color of the winning pions to green.
  */
 
 function rechercherVainqueur(pions, joueurs, tour) {
@@ -108,11 +109,12 @@ function rechercherVainqueur(pions, joueurs, tour) {
 }
 
 /**
- * The function checks if any of the elements in an array of HTML elements have no innerHTML content.
+ * The function checks if any of the elements in an array of HTML elements 
+ * have no innerHTML content.
  * @param pions - an array of HTML elements representing game pieces or tokens.
  * @returns The function is checking if any of the elements in the `pions` array have an empty
- * innerHTML property. If at least one element has an empty innerHTML, the function returns `false`.
- * Otherwise, it returns `true`.
+ * innerHTML property. If at least one element has an empty innerHTML, the 
+ * function returns `false`. Otherwise, it returns `true`.
  */
 
 function matchNul(pions) {
@@ -134,6 +136,14 @@ the players during the game. */
 var AfficheurGame = function (element) {
   var affichage = element;
 
+  /**
+ * The function sets the innerHTML of an element with 
+ * the message passed as an argument.
+ * @param message - The message parameter is a string that will be displayed
+ * on the webpage. The function setText takes this message as an argument
+ * and sets the innerHTML of an element with the id "affichage" to the 
+ * message.
+ */
   function setText(message) {
     affichage.innerHTML = message;
   }
@@ -162,8 +172,9 @@ var AfficheurPlayer2 = function (element) {
 };
 
 /**
- * The function sets up a game of tic-tac-toe with two players and allows them to take turns placing
- * their symbols on the board until a winner is found or the game ends in a tie.
+ * The function sets up a game of tic-tac-toe with two players and allows 
+ * them to take turns placing their symbols on the board until a winner is
+ * found or the game ends in a tie.
  * @returns There is no return statement in the code provided, so nothing is being returned.
  */
 function main() {
