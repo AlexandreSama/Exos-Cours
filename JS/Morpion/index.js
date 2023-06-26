@@ -19,6 +19,21 @@ function setSymbol(btn, symbole) {
  */
 
 function rechercherVainqueur(pions, joueurs, tour) {
+  // switch (true) {
+  //   case pions[0].innerHTML == joueurs[tour] && pions[1].innerHTML == joueurs[tour] && pions[2].innerHTML == joueurs[tour]:
+  //       pions[0].style.backgroundColor = "#9ACD32"
+  //       pions[1].style.backgroundColor = "#9ACD32"
+  //       pions[2].style.backgroundColor = "#9ACD32"
+  //   break;
+  //   case pions[3].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[5].innerHTML == joueurs[tour]:
+  //       pions[3].style.backgroundColor = "#9ACD32";
+  //       pions[4].style.backgroundColor = "#9ACD32";
+  //       pions[5].style.backgroundColor = "#9ACD32";
+  //   break;
+  //   default:
+  //     break;
+  // }
+
   if (
     pions[0].innerHTML == joueurs[tour] &&
     pions[1].innerHTML == joueurs[tour] &&
