@@ -201,9 +201,7 @@ function main() {
     element.style.backgroundColor = 'white';
   });
   afficheur.sendMessage(
-    "Le jeu peut commencer ! <br /> Joueur " +
-      joueurs[tour] +
-      " c'est votre tour."
+    "Que le jeu commence ! "
   );
 
   for (var i = 0, len = pions.length; i < len; i++) {
