@@ -512,6 +512,10 @@
     // Get the button:
     let mybutton = document.getElementById("buttonUp");
 
+    function closeMenu() {
+      document.getElementById('menu-toggle').checked = false;
+    }
+
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
       scrollFunction();
@@ -592,7 +596,6 @@
       
       }else if(!isInViewport(document.getElementById('profile1')) && document.body.clientWidth <= 1122){
         undoChangeStyleTeams(document.getElementsByClassName('teamsIMG')[0], document.getElementsByClassName('teams-member-socials')[0])
-        console.log('Bloqué')
         
       }
       if (isInViewport(document.getElementById('profile2')) && document.body.clientWidth <= 1122){
@@ -600,7 +603,6 @@
 
       }else if(!isInViewport(document.getElementById('profile2')) && document.body.clientWidth <= 1122){
         undoChangeStyleTeams(document.getElementsByClassName('teamsIMG')[1], document.getElementsByClassName('teams-member-socials')[1])
-        console.log('Bloqué')
 
       }
       if(isInViewport(document.getElementById('profile3')) && document.body.clientWidth <= 1122){
@@ -608,7 +610,6 @@
 
       }else if(!isInViewport(document.getElementById('profile3')) && document.body.clientWidth <= 1122){
         undoChangeStyleTeams(document.getElementsByClassName('teamsIMG')[2], document.getElementsByClassName('teams-member-socials')[2])
-        console.log('Bloqué')
 
       }
       if(isInViewport(document.getElementById('profile4')) && document.body.clientWidth <= 1122){
@@ -616,7 +617,6 @@
 
       }else if(!isInViewport(document.getElementById('profile4')) && document.body.clientWidth <= 1122){
         undoChangeStyleTeams(document.getElementsByClassName('teamsIMG')[3], document.getElementsByClassName('teams-member-socials')[3])
-        console.log('Bloqué')
 
       }
 

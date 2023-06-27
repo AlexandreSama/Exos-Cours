@@ -1,0 +1,47 @@
+body{
+    box-sizing: border-box;
+    background-color: #EEE;
+}
+
+#container{
+    width: 600px;
+    height: 600px;
+    border: 1px solid #CCC;
+    margin: 0 auto;
+    background-color: #FFF;
+    position: relative;
+}
+
+#rouge, #vert, #bleu{
+    text-align: center;
+}
+
+#rouge{
+    width: 200px;
+    height: 200px;
+    background-color: #F00;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 3;
+}
+
+#vert{
+    width: 100px;
+    height: 100px;
+    background-color: #0F0;
+    position: absolute;
+    bottom: 30%;
+    right: 30%;
+    z-index: 2;
+}
+
+#bleu{
+    width: 50px;
+    height: 50px;
+    background-color: #00F;
+    position: absolute;
+    bottom: 43%;
+    right: 42%;
+    z-index: 1;
+}
