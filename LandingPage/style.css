@@ -883,6 +883,7 @@ section{
   .learnmorePricing {
     align-self: center;
     max-width: 40%;
+    width: 40%;
   }
   .imagePart {
     height: 45%;
