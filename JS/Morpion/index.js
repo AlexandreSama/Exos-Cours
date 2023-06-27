@@ -269,11 +269,13 @@ function main() {
           afficheurPlayer2.sendMessage(
             "Joueur " + joueurs[tour] + " c'est à vous !"
           );
+          afficheurPlayer1.sendMessage("Joueur X attendez votre tour")
         } else {
           document.querySelector(".gameScore2").innerHTML = "";
           afficheurPlayer1.sendMessage(
             "Joueur " + joueurs[tour] + " c'est à vous !"
           );
+          afficheurPlayer2.sendMessage("Joueur O attendez votre tour")
         }
 
       }
