@@ -19,20 +19,6 @@ function setSymbol(btn, symbole) {
  */
 
 function rechercherVainqueur(pions, joueurs, tour) {
-  // switch (true) {
-  //   case pions[0].innerHTML == joueurs[tour] && pions[1].innerHTML == joueurs[tour] && pions[2].innerHTML == joueurs[tour]:
-  //       pions[0].style.backgroundColor = "#9ACD32"
-  //       pions[1].style.backgroundColor = "#9ACD32"
-  //       pions[2].style.backgroundColor = "#9ACD32"
-  //   break;
-  //   case pions[3].innerHTML == joueurs[tour] && pions[4].innerHTML == joueurs[tour] && pions[5].innerHTML == joueurs[tour]:
-  //       pions[3].style.backgroundColor = "#9ACD32";
-  //       pions[4].style.backgroundColor = "#9ACD32";
-  //       pions[5].style.backgroundColor = "#9ACD32";
-  //   break;
-  //   default:
-  //     break;
-  // }
 
   if (
     pions[0].innerHTML == joueurs[tour] &&
@@ -186,6 +172,11 @@ var AfficheurPlayer2 = function (element) {
   return { sendMessage: setText };
 };
 
+var player1Points = 0;
+var player2Points = 0;
+document.getElementById('player1Points').innerHTML += player1Points;
+document.getElementById('player2Points').innerHTML += player2Points;
+
 /**
  * The function sets up a game of tic-tac-toe with two players and allows 
  * them to take turns placing their symbols on the board until a winner is
@@ -205,6 +196,10 @@ function main() {
     document.querySelector(".gameScore1")
   );
 
+  pions.forEach(element => {
+    element.innerHTML = '';
+    element.style.backgroundColor = 'white';
+  });
   afficheur.sendMessage(
     "Le jeu peut commencer ! <br /> Joueur " +
       joueurs[tour] +
@@ -242,14 +237,18 @@ function main() {
             afficheurPlayer2.sendMessage(
               "Le joueur " +
                 joueurs[tour] +
-                ' a gagné ! <br /> <a href="index.html">Rejouer</a>'
+                ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
             );
+            player2Points++;
+            document.getElementById('player2Points').innerHTML = 'Points : ' + player2Points;
           } else {
             afficheurPlayer1.sendMessage(
               "Le joueur " +
                 joueurs[tour] +
-                ' a gagné ! <br /> <a href="index.html">Rejouer</a>'
+                ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
             );
+            player1Points++;
+            document.getElementById('player1Points').innerHTML = 'Points : ' + player1Points;
           }
 
           return;
@@ -259,7 +258,7 @@ function main() {
           document.querySelector(".gameScore1").innerHTML = "";
           document.querySelector(".gameScore2").innerHTML = "";
           afficheur.sendMessage(
-            'Match Nul ! <br/> <a href="index.html">Rejouer</a>'
+            'Match Nul ! <br/> <a href="#" onclick="main()">Rejouer</a>'
           );
           return;
         }
