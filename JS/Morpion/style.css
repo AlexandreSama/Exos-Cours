@@ -63,3 +63,30 @@ body {
   text-align: center;
   font-size: 20px;
 }
+
+@media (max-width: 1440px){
+  .table{
+    flex-direction: column;
+  }
+  .player1, .player2{
+    width: 100%;
+    border: none;
+  }
+  #Jeu{
+    padding: 0;
+    width: 100%;
+  }
+  .buttonHolder{
+    display: flex;
+    justify-content: center;
+  }
+  #Jeu button{
+    margin: 12px;
+  }
+}
+
+@media (max-width: 320px){
+  #Jeu button{
+    margin: 5px;
+  }
+}

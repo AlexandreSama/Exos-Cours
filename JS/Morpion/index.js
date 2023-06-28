@@ -172,6 +172,7 @@ var AfficheurPlayer2 = function (element) {
   return { sendMessage: setText };
 };
 
+//Points for the players
 var player1Points = 0;
 var player2Points = 0;
 document.getElementById('player1Points').innerHTML += player1Points;
@@ -239,6 +240,7 @@ function main() {
             );
             player2Points++;
             document.getElementById('player2Points').innerHTML = 'Points : ' + player2Points;
+            document.querySelector(".gameScore1").innerHTML = '';
           } else {
             afficheurPlayer1.sendMessage(
               "Le joueur " +
@@ -247,6 +249,7 @@ function main() {
             );
             player1Points++;
             document.getElementById('player1Points').innerHTML = 'Points : ' + player1Points;
+            document.querySelector(".gameScore2").innerHTML = '';
           }
 
           return;
