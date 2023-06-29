@@ -20,6 +20,32 @@ function setSymbol(btn, symbole) {
 
 function rechercherVainqueur(pions, joueurs, tour) {
 
+  const timerDebut = new Date().getTime();
+
+
+  const combinaisonsGagnantes = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
+
+  // forEach, map
+  // .map(elt => elt * 2)
+  // filter()
+  // find, findIndexOf (qui remplace indexOf() sous forme de fonction)
+  // every, some
+  // concat (utilisé surtout pour cloner un tableau)
+  // reduce, sort
+
+  // .then()/.catch() => ECMAScript2016 : utiliser la nouvelle syntaxe async/await (+ try/catch)
+
+  // // filtrer les combinaisons pour ne conserver que celles qui 
+  // combinaisonsGagnantes.filter(combinaison =>
+  //   combinaison.every(cellule => pions[cellule].innerHTML == joueurs[tour])
+  // )
+  // // ici on n'a que les combinaisons/lignes gagnantes
+  // .forEach(combinaison =>
+  //   combinaison.forEach(cellule =>
+  //     pions[cellule].style.backgroundColor = "#9ACD32"
+  //   )
+  // );
+
   if (
     pions[0].innerHTML == joueurs[tour] &&
     pions[1].innerHTML == joueurs[tour] &&
@@ -107,6 +133,8 @@ function rechercherVainqueur(pions, joueurs, tour) {
     pions[6].style.backgroundColor = "#9ACD32";
     return true;
   }
+
+  console.log(`Temps d'exec. : ${new Date().getTime() - timerDebut} ms`);
 }
 
 /**
