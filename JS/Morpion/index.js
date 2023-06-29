@@ -25,6 +25,20 @@ function rechercherVainqueur(pions, joueurs, tour) {
 
   const combinaisonsGagnantes = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
 
+  // objet state/état global
+  let test = {
+    players:
+  [ 
+    // player 1
+    {
+
+    },
+    // player 2
+    {
+
+    }
+  ]
+}
   // forEach, map
   // .map(elt => elt * 2)
   // filter()
