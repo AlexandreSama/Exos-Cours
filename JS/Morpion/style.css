@@ -35,22 +35,23 @@ body {
   width: 250px;
   height: 70px;
 }
-#Jeu #playerInfos {
-  width: 177px;
-  height: 37px;
-  font-size: 20px;
-}
 
 #StatutJeu {
   color: black;
   background-color: SteelBlue;
-  padding: 10px 0;
+  padding: 5px 0;
   text-align: center;
   font-size: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 4px solid black;
+}
+
+#Jeu #playerInfos {
+  width: 176px;
+  height: 40px;
+  font-size: 19px;
 }
 
 #Jeu input{

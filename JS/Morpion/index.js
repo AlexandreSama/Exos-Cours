@@ -311,10 +311,14 @@ document.getElementById('playerInfos').addEventListener('click', () => {
 
   let p1Name = document.getElementById('pseudoP1').value
   let p2Name = document.getElementById('pseudoP2').value
-  document.getElementById('playerName1').innerHTML += p1Name
-  document.getElementById('playerName2').innerHTML += p2Name
-  let tab = []
-  tab.push(p1Name, p2Name)
-  main(tab)
+  if(!p1Name && !p2Name){
+    alert('Pensez a mettre un pseudonyme pour chaque joueur !')
+  }else{
+    document.getElementById('playerName1').innerHTML += p1Name
+    document.getElementById('playerName2').innerHTML += p2Name
+    let tab = []
+    tab.push(p1Name, p2Name)
+    main(tab)
+  }
 
 })
