@@ -234,12 +234,6 @@ function main(playerNames) {
   }
   var jeuEstFini = 0;
   var afficheur = new AfficheurGame(document.querySelector("#StatutJeu"));
-  // var afficheurPlayer2 = new AfficheurPlayer2(
-  //   document.querySelector(".gameScore2")
-  // );
-  // var afficheurPlayer1 = new AfficheurPlayer1(
-  //   document.querySelector(".gameScore1")
-  // );
 
   pions.forEach(element => {
     element.innerHTML = '';
@@ -284,7 +278,6 @@ function main(playerNames) {
             );
             player2Points = player2Points + jeuEstFini;
             document.getElementById('player2Points').innerHTML = 'Points : ' + player2Points;
-            document.querySelector(".gameScore1").innerHTML = '';
           } else {
             afficheur.sendMessage(
               "Le joueur " +
@@ -293,15 +286,12 @@ function main(playerNames) {
             );
             player1Points = player1Points + jeuEstFini;;
             document.getElementById('player1Points').innerHTML = 'Points : ' + player1Points;
-            document.querySelector(".gameScore2").innerHTML = '';
           }
 
           return;
         }
 
         if (matchNul(pions)) {
-          document.querySelector(".gameScore1").innerHTML = "";
-          document.querySelector(".gameScore2").innerHTML = "";
           afficheur.sendMessage(
             'Match Nul ! <br/> <a href="#" onclick="main()">Rejouer</a>'
           );
@@ -312,13 +302,11 @@ function main(playerNames) {
         tour = tour % 2;
         console.log(Object.keys(players)[tour])
         if (Object.values(players)[tour] == "O") {
-          document.querySelector(".gameScore1").innerHTML = "";
           afficheur.sendMessage(
             "Joueur " + Object.keys(players)[tour] + " c'est à vous !"
           );
           afficheur.sendMessage("Joueur " + Object.keys(players)[tour - 1] + " attendez votre tour")
         } else if (Object.values(players)[tour] == "X") {
-          document.querySelector(".gameScore2").innerHTML = "";
           afficheur.sendMessage(
             "Joueur " + Object.keys(players)[tour] + " c'est à vous !"
           );
