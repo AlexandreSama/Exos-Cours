@@ -52,6 +52,9 @@ body {
   align-items: center;
 }
 
+#Jeu input{
+  height: 35px;
+}
 .player1 {
   display: inherit;
   flex-direction: column;
