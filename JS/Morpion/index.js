@@ -24,7 +24,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
 
 
   // const combinaisonsGagnantes = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
-  // let temp = false
+  let temp = 0
 
   // objet state/état global
   // forEach, map
@@ -61,7 +61,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
     pions[0].style.backgroundColor = "#9ACD32";
     pions[1].style.backgroundColor = "#9ACD32";
     pions[2].style.backgroundColor = "#9ACD32";
-    return true;
+    temp = temp + 1
   }
 
   if (
@@ -72,7 +72,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
     pions[3].style.backgroundColor = "#9ACD32";
     pions[4].style.backgroundColor = "#9ACD32";
     pions[5].style.backgroundColor = "#9ACD32";
-    return true;
+    temp = temp + 1
   }
 
   if (
@@ -83,7 +83,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
     pions[6].style.backgroundColor = "#9ACD32";
     pions[7].style.backgroundColor = "#9ACD32";
     pions[8].style.backgroundColor = "#9ACD32";
-    return true;
+    temp = temp + 1
   }
 
   if (
@@ -94,7 +94,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
     pions[0].style.backgroundColor = "#9ACD32";
     pions[3].style.backgroundColor = "#9ACD32";
     pions[6].style.backgroundColor = "#9ACD32";
-    return true;
+    temp = temp + 1
   }
 
   if (
@@ -105,7 +105,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
     pions[1].style.backgroundColor = "#9ACD32";
     pions[4].style.backgroundColor = "#9ACD32";
     pions[7].style.backgroundColor = "#9ACD32";
-    return true;
+    temp = temp + 1
   }
 
   if (
@@ -116,7 +116,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
     pions[2].style.backgroundColor = "#9ACD32";
     pions[5].style.backgroundColor = "#9ACD32";
     pions[8].style.backgroundColor = "#9ACD32";
-    return true;
+    temp = temp + 1
   }
 
   if (
@@ -127,7 +127,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
     pions[0].style.backgroundColor = "#9ACD32";
     pions[4].style.backgroundColor = "#9ACD32";
     pions[8].style.backgroundColor = "#9ACD32";
-    return true;
+    temp = temp + 1
   }
 
   if (
@@ -138,9 +138,10 @@ function rechercherVainqueur(pions, joueurs, tour) {
     pions[2].style.backgroundColor = "#9ACD32";
     pions[4].style.backgroundColor = "#9ACD32";
     pions[6].style.backgroundColor = "#9ACD32";
-    return true;
+    temp = temp + 1
   }
 
+  return temp;
   // console.log(`Temps d'exec. : ${new Date().getTime() - timerDebut} ms`);
 }
 
@@ -212,6 +213,9 @@ var player1Points = 0;
 var player2Points = 0;
 document.getElementById('player1Points').innerHTML += player1Points;
 document.getElementById('player2Points').innerHTML += player2Points;
+var joueurs = ["X", "O"];
+var temp = 0;
+var players = {}
 
 /**
  * The function sets up a game of tic-tac-toe with two players and allows 
@@ -219,11 +223,16 @@ document.getElementById('player2Points').innerHTML += player2Points;
  * found or the game ends in a tie.
  * @returns There is no return statement in the code provided, so nothing is being returned.
  */
-function main() {
+function main(playerNames) {
   var pions = document.querySelectorAll("#Jeu button");
-  var joueurs = ["X", "O"];
   var tour = 0;
-  var jeuEstFini = false;
+  if (playerNames) {
+    playerNames.forEach(element => {
+      players[element] = joueurs[temp]
+      temp++
+    })
+  }
+  var jeuEstFini = 0;
   var afficheur = new AfficheurGame(document.querySelector("#StatutJeu"));
   var afficheurPlayer2 = new AfficheurPlayer2(
     document.querySelector(".gameScore2")
@@ -246,17 +255,17 @@ function main() {
 
       if (!estValide(this)) {
 
-        if (joueurs[tour] == "O") {
+        if (Object.values(players)[tour] == "O") {
           afficheurPlayer2.sendMessage(
             "Case occupée ! <br />Joueur " +
-              joueurs[tour] +
-              " c'est toujours à vous !"
+            playerNames[tour].name +
+            " c'est toujours à vous !"
           );
         } else {
           afficheurPlayer1.sendMessage(
             "Case occupée ! <br />Joueur " +
-              joueurs[tour] +
-              " c'est toujours à vous !"
+            playerNames[tour].name +
+            " c'est toujours à vous !"
           );
         }
 
@@ -267,22 +276,22 @@ function main() {
 
         if (jeuEstFini) {
 
-          if (joueurs[tour] == "O") {
+          if (Object.values(players)[tour] == "O") {
             afficheur.sendMessage(
               "Le joueur " +
-                joueurs[tour] +
-                ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
+              Object.keys(players)[tour] +
+              ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
             );
-            player2Points++;
+            player2Points = player2Points + jeuEstFini;
             document.getElementById('player2Points').innerHTML = 'Points : ' + player2Points;
             document.querySelector(".gameScore1").innerHTML = '';
           } else {
             afficheur.sendMessage(
               "Le joueur " +
-                joueurs[tour] +
-                ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
+              Object.keys(players)[tour] +
+              ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
             );
-            player1Points++;
+            player1Points = player1Points + jeuEstFini;;
             document.getElementById('player1Points').innerHTML = 'Points : ' + player1Points;
             document.querySelector(".gameScore2").innerHTML = '';
           }
@@ -301,19 +310,19 @@ function main() {
 
         tour++;
         tour = tour % 2;
-
-        if (joueurs[tour] == "O") {
+        console.log(Object.keys(players)[tour])
+        if (Object.values(players)[tour] == "O") {
           document.querySelector(".gameScore1").innerHTML = "";
           afficheurPlayer2.sendMessage(
-            "Joueur " + joueurs[tour] + " c'est à vous !"
+            "Joueur " + Object.keys(players)[tour] + " c'est à vous !"
           );
-          afficheurPlayer1.sendMessage("Joueur X attendez votre tour")
-        } else {
+          afficheurPlayer1.sendMessage("Joueur " + Object.keys(players)[tour - 1] + " attendez votre tour")
+        } else if (Object.values(players)[tour] == "X") {
           document.querySelector(".gameScore2").innerHTML = "";
           afficheurPlayer1.sendMessage(
-            "Joueur " + joueurs[tour] + " c'est à vous !"
+            "Joueur " + Object.keys(players)[tour] + " c'est à vous !"
           );
-          afficheurPlayer2.sendMessage("Joueur O attendez votre tour")
+          afficheurPlayer2.sendMessage("Joueur " + Object.keys(players)[tour + 1] + " attendez votre tour")
         }
 
       }
@@ -321,4 +330,10 @@ function main() {
   }
 }
 
-main();
+document.getElementById('playerInfos').addEventListener('click', () => {
+  let p1Name = document.getElementById('pseudoP1').value
+  let p2Name = document.getElementById('pseudoP2').value
+  let tab = []
+  tab.push(p1Name, p2Name)
+  main(tab)
+})
