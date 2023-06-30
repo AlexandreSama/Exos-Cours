@@ -251,7 +251,7 @@ function main(playerNames) {
             afficheur.sendMessage(
               "Le joueur " +
               Object.keys(players)[tour] +
-              ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
+              ' a gagné ! <br /> <button type="button" class="btnReplay" onclick="main()">Rejouer ?'
             );
 
             player2Points = player2Points + jeuEstFini;
@@ -262,10 +262,10 @@ function main(playerNames) {
             afficheur.sendMessage(
               "Le joueur " +
               Object.keys(players)[tour] +
-              ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
+              ' a gagné ! <br /> <button type="button" class="btnReplay" onclick="main()">Rejouer ?'
             );
 
-            player1Points = player1Points + jeuEstFini;;
+            player1Points = player1Points + jeuEstFini;
             document.getElementById('player1Points').innerHTML = 'Points : ' + player1Points;
 
           }
@@ -308,6 +308,7 @@ function main(playerNames) {
 /* This code snippet is adding an event listener to the element with the id "playerInfos". When this
 element is clicked, the code inside the arrow function will be executed. */
 document.getElementById('playerInfos').addEventListener('click', () => {
+
   let p1Name = document.getElementById('pseudoP1').value
   let p2Name = document.getElementById('pseudoP2').value
   document.getElementById('playerName1').innerHTML += p1Name
@@ -315,4 +316,5 @@ document.getElementById('playerInfos').addEventListener('click', () => {
   let tab = []
   tab.push(p1Name, p2Name)
   main(tab)
+
 })

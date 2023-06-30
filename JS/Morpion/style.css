@@ -31,6 +31,10 @@ body {
   float: left;
 }
 
+#Jeu .btnReplay{
+  width: 250px;
+  height: 70px;
+}
 #Jeu #playerInfos {
   width: 177px;
   height: 37px;
