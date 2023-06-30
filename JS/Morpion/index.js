@@ -234,12 +234,12 @@ function main(playerNames) {
   }
   var jeuEstFini = 0;
   var afficheur = new AfficheurGame(document.querySelector("#StatutJeu"));
-  var afficheurPlayer2 = new AfficheurPlayer2(
-    document.querySelector(".gameScore2")
-  );
-  var afficheurPlayer1 = new AfficheurPlayer1(
-    document.querySelector(".gameScore1")
-  );
+  // var afficheurPlayer2 = new AfficheurPlayer2(
+  //   document.querySelector(".gameScore2")
+  // );
+  // var afficheurPlayer1 = new AfficheurPlayer1(
+  //   document.querySelector(".gameScore1")
+  // );
 
   pions.forEach(element => {
     element.innerHTML = '';
@@ -256,13 +256,13 @@ function main(playerNames) {
       if (!estValide(this)) {
 
         if (Object.values(players)[tour] == "O") {
-          afficheurPlayer2.sendMessage(
+          afficheur.sendMessage(
             "Case occupée ! <br />Joueur " +
             playerNames[tour].name +
             " c'est toujours à vous !"
           );
         } else {
-          afficheurPlayer1.sendMessage(
+          afficheur.sendMessage(
             "Case occupée ! <br />Joueur " +
             playerNames[tour].name +
             " c'est toujours à vous !"
@@ -313,16 +313,16 @@ function main(playerNames) {
         console.log(Object.keys(players)[tour])
         if (Object.values(players)[tour] == "O") {
           document.querySelector(".gameScore1").innerHTML = "";
-          afficheurPlayer2.sendMessage(
+          afficheur.sendMessage(
             "Joueur " + Object.keys(players)[tour] + " c'est à vous !"
           );
-          afficheurPlayer1.sendMessage("Joueur " + Object.keys(players)[tour - 1] + " attendez votre tour")
+          afficheur.sendMessage("Joueur " + Object.keys(players)[tour - 1] + " attendez votre tour")
         } else if (Object.values(players)[tour] == "X") {
           document.querySelector(".gameScore2").innerHTML = "";
-          afficheurPlayer1.sendMessage(
+          afficheur.sendMessage(
             "Joueur " + Object.keys(players)[tour] + " c'est à vous !"
           );
-          afficheurPlayer2.sendMessage("Joueur " + Object.keys(players)[tour + 1] + " attendez votre tour")
+          afficheur.sendMessage("Joueur " + Object.keys(players)[tour + 1] + " attendez votre tour")
         }
 
       }
@@ -333,6 +333,8 @@ function main(playerNames) {
 document.getElementById('playerInfos').addEventListener('click', () => {
   let p1Name = document.getElementById('pseudoP1').value
   let p2Name = document.getElementById('pseudoP2').value
+  document.getElementById('playerName1').innerHTML = p1Name
+  document.getElementById('playerName2').innerHTML = p2Name
   let tab = []
   tab.push(p1Name, p2Name)
   main(tab)
