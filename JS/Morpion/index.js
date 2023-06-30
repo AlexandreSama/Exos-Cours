@@ -217,11 +217,12 @@ var joueurs = ["X", "O"];
 var temp = 0;
 var players = {}
 
+
 /**
- * The function sets up a game of tic-tac-toe with two players and allows 
- * them to take turns placing their symbols on the board until a winner is
- * found or the game ends in a tie.
- * @returns There is no return statement in the code provided, so nothing is being returned.
+ * The main function handles the logic of a tic-tac-toe game, including player turns, checking for a
+ * winner, and displaying messages.
+ * @param playerNames - playerNames is an array of player names.
+ * @returns The function does not have a return statement, so it does not return any value.
  */
 function main(playerNames) {
   var pions = document.querySelectorAll("#Jeu button");
@@ -318,6 +319,8 @@ function main(playerNames) {
   }
 }
 
+/* This code snippet is adding an event listener to the element with the id "playerInfos". When this
+element is clicked, the code inside the arrow function will be executed. */
 document.getElementById('playerInfos').addEventListener('click', () => {
   let p1Name = document.getElementById('pseudoP1').value
   let p2Name = document.getElementById('pseudoP2').value
