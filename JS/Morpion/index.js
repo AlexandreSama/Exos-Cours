@@ -152,7 +152,7 @@ to the `message` parameter. The `sendMessage` method returns the
 `setText` function. These objects are used to display messages to
 the players during the game. */
 
-var AfficheurGame = function (element) {
+var afficheurGame = function (element) {
   var affichage = element;
 
   /**
@@ -191,7 +191,7 @@ function main(playerNames) {
   var pions = document.querySelectorAll("#Jeu button");
   var tour = 0;
   var jeuEstFini = 0;
-  var afficheur = new AfficheurGame(document.querySelector("#StatutJeu"));
+  var afficheur = new afficheurGame(document.querySelector("#StatutJeu"));
 
   if (playerNames) {
 
