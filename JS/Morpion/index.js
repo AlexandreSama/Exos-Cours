@@ -31,10 +31,8 @@ function setSymbol(btn, symbole) {
 
 function rechercherVainqueur(pions, joueurs, tour) {
 
-  // const timerDebut = new Date().getTime();
-
+  const timerDebut = new Date().getTime();
   let temp = 0
-
 
   if (
     pions[0].innerHTML == joueurs[tour] &&
@@ -124,9 +122,9 @@ function rechercherVainqueur(pions, joueurs, tour) {
     temp = temp + 1
   }
 
-  return temp;
+  console.log(`Temps d'exec. : ${new Date().getTime() - timerDebut} ms`);
 
-  // console.log(`Temps d'exec. : ${new Date().getTime() - timerDebut} ms`);
+  return temp;
 }
 
 /**
@@ -189,7 +187,7 @@ var players = {}
  * @returns The function does not have a return statement, so it does not return any value.
  */
 function main(playerNames) {
-  
+
   var pions = document.querySelectorAll("#Jeu button");
   var tour = 0;
   var jeuEstFini = 0;
