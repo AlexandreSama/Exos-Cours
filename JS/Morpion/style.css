@@ -3,11 +3,13 @@ body {
   text-align: center;
   margin: 0;
 }
-.table{
+
+.table {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
+
 #Jeu {
   display: inline-block;
   background-color: SteelBlue;
@@ -26,38 +28,15 @@ body {
   font-weight: bold;
   font-size: 50px;
   margin: 5px;
-  float:left;
+  float: left;
 }
-#Jeu #playerInfos{
+
+#Jeu #playerInfos {
   width: 177px;
   height: 37px;
   font-size: 20px;
 }
-.playerPoints{
-  border: 2px solid black;
-}
-.player1{
-  display: inherit;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid black;
-  width: 40%;
-}
-.player1Infos{
-  border: 2px solid black;
 
-}
-.player2{
-  display: inherit;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid black;
-  width: 40%;
-}
-.player2Infos{
-  border: 2px solid black;
-
-}
 #StatutJeu {
   color: black;
   background: #eee;
@@ -69,29 +48,66 @@ body {
   align-items: center;
 }
 
-@media (max-width: 2560px){
-  .table{
+.player1 {
+  display: inherit;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid black;
+  width: 40%;
+}
+
+.player1Infos {
+  border: 2px solid black;
+
+}
+
+.player2 {
+  display: inherit;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid black;
+  width: 40%;
+}
+
+.player2Infos {
+  border: 2px solid black;
+
+}
+
+.playerPoints {
+  border: 2px solid black;
+}
+
+@media (max-width: 2560px) {
+  .table {
     flex-direction: column;
   }
-  .player1, .player2{
+
+  .player1,
+  .player2 {
     width: 100%;
     border: none;
   }
-  #Jeu{
+
+  #Jeu {
     padding: 0;
     width: 100%;
   }
-  .buttonHolder{
+
+  .buttonHolder {
     display: flex;
     justify-content: center;
   }
-  #Jeu button{
+
+  #Jeu button {
     margin: 12px;
   }
+
 }
 
-@media (max-width: 320px){
-  #Jeu button{
+@media (max-width: 320px) {
+  #Jeu button {
     margin: 5px;
   }
+
 }
