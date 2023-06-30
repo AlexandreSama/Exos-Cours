@@ -1,7 +1,18 @@
+/**
+ * The function "estValide" checks if a button's innerHTML is empty.
+ * @param button - The parameter "button" is a reference to an HTML button element.
+ * @returns a boolean value indicating whether the innerHTML of the button is empty or not.
+ */
 function estValide(button) {
   return button.innerHTML.length == 0;
 }
 
+/**
+ * The function "setSymbol" sets the innerHTML of a button to a specified symbol.
+ * @param btn - The "btn" parameter is the button element that you want to set the symbol for.
+ * @param symbole - The `symbole` parameter is a string that represents the symbol you want to set on
+ * the button.
+ */
 function setSymbol(btn, symbole) {
   btn.innerHTML = symbole;
 }
@@ -22,36 +33,8 @@ function rechercherVainqueur(pions, joueurs, tour) {
 
   // const timerDebut = new Date().getTime();
 
-
-  // const combinaisonsGagnantes = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
   let temp = 0
 
-  // objet state/état global
-  // forEach, map
-  // .map(elt => elt * 2)
-  // filter()
-  // find, findIndexOf (qui remplace indexOf() sous forme de fonction)
-  // every, some
-  // concat (utilisé surtout pour cloner un tableau)
-  // reduce, sort
-
-  // .then()/.catch() => ECMAScript2016 : utiliser la nouvelle syntaxe async/await (+ try/catch)
-
-  // filtrer les combinaisons pour ne conserver que celles qui 
-  // combinaisonsGagnantes.filter(combinaison =>
-  //   combinaison.every(cellule => {
-  //     console.log(cellule);
-  //     pions[cellule].innerHTML == joueurs[tour]
-  //   })
-  // )
-  // ici on n'a que les combinaisons/lignes gagnantes
-  // .forEach(combinaison =>
-  //   combinaison.forEach(cellule => {
-  //     pions[cellule].style.backgroundColor = "#9ACD32"
-  //     temp = true
-  //   })
-  // );
-  // return temp
 
   if (
     pions[0].innerHTML == joueurs[tour] &&
@@ -142,6 +125,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
   }
 
   return temp;
+
   // console.log(`Temps d'exec. : ${new Date().getTime() - timerDebut} ms`);
 }
 
@@ -188,26 +172,6 @@ var AfficheurGame = function (element) {
   return { sendMessage: setText };
 };
 
-var AfficheurPlayer1 = function (element) {
-  var affichage = element;
-
-  function setText(message) {
-    affichage.innerHTML = message;
-  }
-
-  return { sendMessage: setText };
-};
-
-var AfficheurPlayer2 = function (element) {
-  var affichage = element;
-
-  function setText(message) {
-    affichage.innerHTML = message;
-  }
-
-  return { sendMessage: setText };
-};
-
 //Points for the players
 var player1Points = 0;
 var player2Points = 0;
@@ -225,21 +189,30 @@ var players = {}
  * @returns The function does not have a return statement, so it does not return any value.
  */
 function main(playerNames) {
+  
   var pions = document.querySelectorAll("#Jeu button");
   var tour = 0;
-  if (playerNames) {
-    playerNames.forEach(element => {
-      players[element] = joueurs[temp]
-      temp++
-    })
-  }
   var jeuEstFini = 0;
   var afficheur = new AfficheurGame(document.querySelector("#StatutJeu"));
 
+  if (playerNames) {
+
+    playerNames.forEach(element => {
+
+      players[element] = joueurs[temp]
+      temp++
+
+    })
+
+  }
+
   pions.forEach(element => {
+
     element.innerHTML = '';
     element.style.backgroundColor = 'white';
+
   });
+
   afficheur.sendMessage(
     "Que le jeu commence ! "
   );
@@ -251,17 +224,21 @@ function main(playerNames) {
       if (!estValide(this)) {
 
         if (Object.values(players)[tour] == "O") {
+
           afficheur.sendMessage(
             "Case occupée ! <br />Joueur " +
             playerNames[tour].name +
             " c'est toujours à vous !"
           );
+
         } else {
+
           afficheur.sendMessage(
             "Case occupée ! <br />Joueur " +
             playerNames[tour].name +
             " c'est toujours à vous !"
           );
+
         }
 
       } else {
@@ -272,48 +249,59 @@ function main(playerNames) {
         if (jeuEstFini) {
 
           if (Object.values(players)[tour] == "O") {
+
             afficheur.sendMessage(
               "Le joueur " +
               Object.keys(players)[tour] +
               ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
             );
+
             player2Points = player2Points + jeuEstFini;
             document.getElementById('player2Points').innerHTML = 'Points : ' + player2Points;
+
           } else {
+
             afficheur.sendMessage(
               "Le joueur " +
               Object.keys(players)[tour] +
               ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
             );
+
             player1Points = player1Points + jeuEstFini;;
             document.getElementById('player1Points').innerHTML = 'Points : ' + player1Points;
+
           }
 
           return;
         }
 
         if (matchNul(pions)) {
+
           afficheur.sendMessage(
             'Match Nul ! <br/> <a href="#" onclick="main()">Rejouer</a>'
           );
           return;
+
         }
 
         tour++;
         tour = tour % 2;
-        console.log(Object.keys(players)[tour])
+
         if (Object.values(players)[tour] == "O") {
+
           afficheur.sendMessage(
             "Joueur " + Object.keys(players)[tour] + " c'est à vous !"
           );
           afficheur.sendMessage("Joueur " + Object.keys(players)[tour - 1] + " attendez votre tour")
+
         } else if (Object.values(players)[tour] == "X") {
+
           afficheur.sendMessage(
             "Joueur " + Object.keys(players)[tour] + " c'est à vous !"
           );
           afficheur.sendMessage("Joueur " + Object.keys(players)[tour + 1] + " attendez votre tour")
-        }
 
+        }
       }
     });
   }
