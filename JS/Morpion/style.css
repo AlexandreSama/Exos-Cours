@@ -33,6 +33,9 @@ body {
   height: 37px;
   font-size: 20px;
 }
+.playerPoints{
+  border: 2px solid black;
+}
 .player1{
   display: inherit;
   flex-direction: column;
@@ -44,9 +47,6 @@ body {
   border: 2px solid black;
 
 }
-.gameScore1{
-  border: 2px solid black;
-}
 .player2{
   display: inherit;
   flex-direction: column;
@@ -57,9 +57,6 @@ body {
 .player2Infos{
   border: 2px solid black;
 
-}
-.gameScore2{
-  border: 2px solid black;
 }
 #StatutJeu {
   color: black;
