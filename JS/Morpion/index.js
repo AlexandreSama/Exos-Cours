@@ -20,25 +20,13 @@ function setSymbol(btn, symbole) {
 
 function rechercherVainqueur(pions, joueurs, tour) {
 
-  const timerDebut = new Date().getTime();
+  // const timerDebut = new Date().getTime();
 
 
-  const combinaisonsGagnantes = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
+  // const combinaisonsGagnantes = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
+  // let temp = false
 
   // objet state/état global
-  let test = {
-    players:
-  [ 
-    // player 1
-    {
-
-    },
-    // player 2
-    {
-
-    }
-  ]
-}
   // forEach, map
   // .map(elt => elt * 2)
   // filter()
@@ -49,16 +37,21 @@ function rechercherVainqueur(pions, joueurs, tour) {
 
   // .then()/.catch() => ECMAScript2016 : utiliser la nouvelle syntaxe async/await (+ try/catch)
 
-  // // filtrer les combinaisons pour ne conserver que celles qui 
+  // filtrer les combinaisons pour ne conserver que celles qui 
   // combinaisonsGagnantes.filter(combinaison =>
-  //   combinaison.every(cellule => pions[cellule].innerHTML == joueurs[tour])
+  //   combinaison.every(cellule => {
+  //     console.log(cellule);
+  //     pions[cellule].innerHTML == joueurs[tour]
+  //   })
   // )
-  // // ici on n'a que les combinaisons/lignes gagnantes
+  // ici on n'a que les combinaisons/lignes gagnantes
   // .forEach(combinaison =>
-  //   combinaison.forEach(cellule =>
+  //   combinaison.forEach(cellule => {
   //     pions[cellule].style.backgroundColor = "#9ACD32"
-  //   )
+  //     temp = true
+  //   })
   // );
+  // return temp
 
   if (
     pions[0].innerHTML == joueurs[tour] &&
@@ -148,7 +141,7 @@ function rechercherVainqueur(pions, joueurs, tour) {
     return true;
   }
 
-  console.log(`Temps d'exec. : ${new Date().getTime() - timerDebut} ms`);
+  // console.log(`Temps d'exec. : ${new Date().getTime() - timerDebut} ms`);
 }
 
 /**
@@ -275,7 +268,7 @@ function main() {
         if (jeuEstFini) {
 
           if (joueurs[tour] == "O") {
-            afficheurPlayer2.sendMessage(
+            afficheur.sendMessage(
               "Le joueur " +
                 joueurs[tour] +
                 ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
@@ -284,7 +277,7 @@ function main() {
             document.getElementById('player2Points').innerHTML = 'Points : ' + player2Points;
             document.querySelector(".gameScore1").innerHTML = '';
           } else {
-            afficheurPlayer1.sendMessage(
+            afficheur.sendMessage(
               "Le joueur " +
                 joueurs[tour] +
                 ' a gagné ! <br /> <a href="#" onclick="main()">Rejouer</a>'
