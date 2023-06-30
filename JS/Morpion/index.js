@@ -138,7 +138,10 @@ function rechercherVainqueur(pions, joueurs, tour) {
 
 function matchNul(pions) {
   for (var i = 0, len = pions.length; i < len; i++) {
-    if (pions[i].innerHTML.length == 0) return false;
+    if (pions[i].innerHTML.length == 0){
+      console.log(pions[i].innerHTML.length);
+      return false;
+    }
   }
 
   return true;
