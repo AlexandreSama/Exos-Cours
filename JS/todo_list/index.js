@@ -30,7 +30,8 @@ function ajoutCard(parent) {
     iconFont.ariaHidden = true
 
     node3.appendChild(iconFont)
-    document.getElementsByClassName(parent)[0].appendChild(node1).appendChild(node2)
+    console.log(document.getElementsByClassName(parent.className))
+    document.getElementsByClassName(parent.className)[0].appendChild(node1).appendChild(node2)
     document.getElementById('card' + temp).appendChild(node3)
 
 }
@@ -48,24 +49,26 @@ function removeCard(){
 }
 
 document.getElementById('btnHTML').addEventListener('click', () => {
-    let test = document.getElementById('btnHTML').parentElement
-    console.log(test.id)
-    ajoutCard(test.id);
-    // delBtns = document.getElementsByClassName('delBtn')
-    // removeCard()
+    let htmlDIV = document.getElementById('btnHTML').parentElement
+    ajoutCard(htmlDIV);
+    delBtns = document.getElementsByClassName('delBtn')
+    removeCard()
 })
 document.getElementById('btnJS').addEventListener('click', () => {
-    // ajoutCard();
-    // delBtns = document.getElementsByClassName('delBtn')
-    // removeCard()
+    let jsDIV = document.getElementById('btnJS').parentElement
+    ajoutCard(jsDIV);
+    delBtns = document.getElementsByClassName('delBtn')
+    removeCard()
 })
 document.getElementById('btnPHP').addEventListener('click', () => {
-    // ajoutCard();
-    // delBtns = document.getElementsByClassName('delBtn')
-    // removeCard()
+    let phpDIV = document.getElementById('btnPHP').parentElement
+    ajoutCard(phpDIV);
+    delBtns = document.getElementsByClassName('delBtn')
+    removeCard()
 })
 document.getElementById('btnJAVA').addEventListener('click', () => {
-    // ajoutCard();
-    // delBtns = document.getElementsByClassName('delBtn')
-    // removeCard()
+    let javaDIV = document.getElementById('btnJAVA').parentElement
+    ajoutCard(javaDIV);    
+    delBtns = document.getElementsByClassName('delBtn')
+    removeCard()
 })
