@@ -61,7 +61,7 @@ const afficheurGame = (element) => {
   const affichage = element;
 
   const setText = (message) => {
-      affichage.innerHTML = message;
+    affichage.innerHTML = message;
   };
 
   return { sendMessage: setText };
@@ -71,8 +71,8 @@ let player1Points = 0;
 let player2Points = 0;
 const player1PointsElement = document.getElementById('player1Points');
 const player2PointsElement = document.getElementById('player2Points');
-player1PointsElement.innerHTML = `Points : ${player1Points}`;
-player2PointsElement.innerHTML = `Points : ${player2Points}`;
+player1PointsElement.textContent = `Points : ${player1Points}`;
+player2PointsElement.textContent = `Points : ${player2Points}`;
 const joueurs = ["X", "O"];
 const players = {};
 
@@ -80,72 +80,63 @@ function main(playerNames) {
   const pions = document.querySelectorAll("#Jeu button");
   let tour = 0;
   let jeuEstFini = false;
-  const afficheur = new afficheurGame(document.querySelector("#StatutJeu"));
+  const afficheur = afficheurGame(document.querySelector("#StatutJeu"));
 
   if (playerNames) {
-      playerNames.forEach((name, index) => {
-          players[name] = joueurs[index];
-      });
+    playerNames.forEach((name, index) => {
+      players[name] = joueurs[index];
+    });
   }
 
   pions.forEach((element) => {
-      element.innerHTML = '';
-      element.style.backgroundColor = 'white';
+    element.innerHTML = '';
+    element.style.backgroundColor = 'white';
   });
 
   afficheur.sendMessage("Que le jeu commence !");
 
   pions.forEach((element) => {
-      element.addEventListener("click", function () {
-          if (jeuEstFini) return;
+    element.addEventListener("click", function () {
+      if (jeuEstFini) return;
 
-          if (!estValide(this)) {
-              afficheur.sendMessage(
-                  "Case occupée ! <br />Joueur " +
-                  playerNames[tour].name +
-                  " c'est toujours à vous !"
-              );
-          } else {
-              setSymbol(this, joueurs[tour]);
-              jeuEstFini = rechercherVainqueur(pions, joueurs, tour);
+      if (!estValide(this)) {
+        afficheur.sendMessage(
+          `Case occupée ! <br />Joueur ${playerNames[tour].name} c'est toujours à vous !`
+        );
+      } else {
+        setSymbol(this, joueurs[tour]);
+        jeuEstFini = rechercherVainqueur(pions, joueurs, tour);
 
-              if (jeuEstFini) {
-                  const playerName = Object.keys(players)[tour];
-                  afficheur.sendMessage(
-                      "Le joueur " +
-                      playerName +
-                      ' a gagné ! <br /> <button type="button" class="btnReplay" onclick="main()">Rejouer ?'
-                  );
+        if (jeuEstFini) {
+          let playerName = Object.keys(players)[tour];
+          afficheur.sendMessage(
+            `Le joueur ${playerName} a gagné ! <br /> <button type="button" class="btnReplay" onclick="main()">Rejouer ?`
+          );
 
-                  if (players[playerName] === "O") {
-                      player2Points += jeuEstFini;
-                      player2PointsElement.innerHTML = `Points : ${player2Points}`;
-                  } else {
-                      player1Points += jeuEstFini;
-                      player1PointsElement.innerHTML = `Points : ${player1Points}`;
-                  }
+          let currentPlayerPointsElement = playerName === "O" ? player2PointsElement : player1PointsElement;
+          let currentPlayerPoints = playerName === "O" ? player2Points : player1Points;
+          currentPlayerPoints += jeuEstFini;
+          currentPlayerPointsElement.textContent = `Points : ${currentPlayerPoints}`;
 
-                  return;
-              }
+          return;
+        }
 
-              if (matchNul(pions)) {
-                  afficheur.sendMessage(
-                      'Match Nul ! <br/> <a href="#" onclick="main()">Rejouer</a>'
-                  );
-                  return;
-              }
+        if (matchNul(pions)) {
+          afficheur.sendMessage(
+            'Match Nul ! <br/> <a href="#" onclick="main()">Rejouer</a>'
+          );
+          return;
+        }
 
-              tour++;
-              tour = tour % 2;
+        tour++;
+        tour = tour % 2;
 
-              const currentPlayerName = Object.keys(players)[tour];
-              const otherPlayerName = Object.keys(players)[1 - tour];
-              afficheur.sendMessage(
-                  "Joueur " + currentPlayerName + " c'est à vous !"
-              );
-              afficheur.sendMessage("Joueur " + otherPlayerName + " attendez votre tour");
-          }
-      });
+        let currentPlayerName = Object.keys(players)[tour];
+        let otherPlayerName = Object.keys(players)[1 - tour];
+        afficheur.sendMessage(`Joueur ${currentPlayerName} c'est à vous !`);
+        afficheur.sendMessage(`Joueur ${otherPlayerName} attendez votre tour`);
+      }
+    });
   });
 }
 
