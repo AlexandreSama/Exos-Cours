@@ -31,7 +31,7 @@ body {
   float: left;
 }
 
-#Jeu .btnReplay{
+#Jeu .btnReplay {
   width: 250px;
   height: 70px;
 }
@@ -54,22 +54,11 @@ body {
   font-size: 19px;
 }
 
-#Jeu input{
+#Jeu input {
   height: 35px;
 }
-.player1 {
-  display: inherit;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid black;
-  width: 40%;
-}
 
-.player1Infos {
-  border: 2px solid black;
-
-}
-
+.player1,
 .player2 {
   display: inherit;
   flex-direction: column;
@@ -78,11 +67,8 @@ body {
   width: 40%;
 }
 
-.player2Infos {
-  border: 2px solid black;
-
-}
-
+.player1Infos,
+.player2Infos,
 .playerPoints {
   border: 2px solid black;
 }
@@ -111,12 +97,10 @@ body {
   #Jeu button {
     margin: 12px;
   }
-
 }
 
 @media (max-width: 320px) {
   #Jeu button {
     margin: 5px;
   }
-
 }

@@ -17,6 +17,16 @@ function setSymbol(btn, symbole) {
   btn.innerHTML = symbole;
 }
 
+/**
+ * The function `rechercherVainqueur` checks if any player has won the game by comparing the values of
+ * the game board cells with the current player's symbol.
+ * @param pions - The parameter "pions" represents an array of HTML elements that represent the game
+ * board positions.
+ * @param joueurs - The parameter "joueurs" represents an array of players in a game.
+ * @param tour - The parameter "tour" represents the current turn in the game. It is used to determine
+ * which player's pion (game piece) to check for in the winning combinations.
+ * @returns the number of winning combinations found in the game board.
+ */
 function rechercherVainqueur(pions, joueurs, tour) {
   const timerDebut = new Date().getTime();
   let temp = 0;
@@ -46,6 +56,15 @@ function rechercherVainqueur(pions, joueurs, tour) {
   return temp;
 }
 
+/**
+ * The function checks if any of the elements in the "pions" array have an empty innerHTML and returns
+ * false if any element is empty, otherwise it returns true.
+ * @param pions - The parameter "pions" is an array of elements. Each element represents a "pion" and
+ * has an "innerHTML" property. The function is checking if any of the "pions" have an empty innerHTML,
+ * and returns false if it finds any empty innerHTML. If all the
+ * @returns a boolean value. If all the elements in the "pions" array have an innerHTML length of 0,
+ * then the function will return true. Otherwise, it will return false.
+ */
 function matchNul(pions) {
   for (const pion of pions) {
       if (pion.innerHTML.length === 0) {
@@ -57,6 +76,14 @@ function matchNul(pions) {
   return true;
 }
 
+/**
+ * The afficheurGame function creates an object with a sendMessage method that sets the innerHTML of a
+ * specified element.
+ * @param element - The `element` parameter is the HTML element that will be used to display the game
+ * messages. It could be a `<div>`, `<p>`, or any other HTML element that can display text.
+ * @returns The function `afficheurGame` returns an object with a property `sendMessage` which is a
+ * function.
+ */
 const afficheurGame = (element) => {
   const affichage = element;
 
@@ -76,6 +103,12 @@ player2PointsElement.textContent = `Points : ${player2Points}`;
 const joueurs = ["X", "O"];
 const players = {};
 
+/**
+ * The main function handles the logic for a game of Tic Tac Toe, including player turns, checking for
+ * a winner, and displaying messages.
+ * @param playerNames - The `playerNames` parameter is an array of strings that represents the names of
+ * the players in the game.
+ */
 function main(playerNames) {
   const pions = document.querySelectorAll("#Jeu button");
   let tour = 0;
@@ -141,10 +174,8 @@ function main(playerNames) {
 }
 
 document.getElementById('playerInfos').addEventListener('click', () => {
-  const p1NameInput = document.getElementById('pseudoP1');
-  const p2NameInput = document.getElementById('pseudoP2');
-  const p1Name = p1NameInput.value;
-  const p2Name = p2NameInput.value;
+  const p1Name = document.getElementById('pseudoP1').value;
+  const p2Name = document.getElementById('pseudoP2').value;
 
   if (!p1Name || !p2Name) {
       alert('Veuillez entrer un pseudonyme pour chaque joueur !');
