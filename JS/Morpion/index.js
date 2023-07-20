@@ -1,7 +1,7 @@
 /**
  * The function "estValide" checks if a button's innerHTML is empty.
- * @param button - The parameter "button" is a reference to an HTML button element.
- * @returns a boolean value indicating whether the innerHTML of the button is empty or not.
+ * @param button - HTML button element.
+ * @returns a boolean whether the innerHTML of the button is empty or not.
  */
 function estValide(button) {
   return button.innerHTML.length == 0;
@@ -9,9 +9,8 @@ function estValide(button) {
 
 /**
 * The function "setSymbol" sets the innerHTML of a button to a specified symbol.
-* @param btn - The "btn" parameter is the button element that you want to set the symbol for.
-* @param symbole - The `symbole` parameter is a string that represents the symbol you want to set on
-* the button.
+* @param btn - The button element that you want to set the symbol for.
+* @param symbole - The symbol you want to set on the button.
 */
 function setSymbol(btn, symbole) {
   btn.innerHTML = symbole;
