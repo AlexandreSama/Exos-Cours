@@ -11,30 +11,42 @@ INNER JOIN specialite s ON p.id_specialite = s.id_specialite ORDER BY l, p.nom_p
 4) SELECT COUNT(*) FROM personnage p
 INNER JOIN specialite s ON p.id_specialite = s.id_specialite ORDER BY COUNT(p.id_personnage) DESC;
 
-5) SELECT b.nom_bataille, b.date_bataille, l.nom_lieu FROM bataille
-INNER JOIN lieu l ON b.id_lieu = l.id_lieu ORDER BY date_bataille ASC;
+5) SELECT b.nom_bataille, DATE_FORMAT(b.date_bataille, '%e/%m/%y'), l.nom_lieu FROM bataille
+b INNER JOIN lieu l ON b.id_lieu = l.id_lieu ORDER BY date_bataille ASC;
 
-6) SELECT p.nom_potion, i.cout_ingredient FROM potion
+6) SELECT p.nom_potion, SUM(c.qte * i.cout_ingredient) AS cout FROM potion p
 INNER JOIN composer c ON p.id_potion = c.id_potion
 INNER JOIN ingredient i ON c.id_ingredient = i.id_ingredient
-ORDER BY i.cout_ingredient DESC;
+GROUP BY p.nom_potion
+HAVING cout
+ORDER BY cout DESC
 
-7) SELECT i.nom_ingredient, i.cout_ingredient, c.qte, p.nom_potion FROM ingredient
+7) SELECT ANY_VALUE(i.nom_ingredient), SUM(c.qte * i.cout_ingredient) AS cout, ANY_VALUE(c.qte), p.nom_potion FROM ingredient i
 INNER JOIN composer c ON i.id_ingredient = c.id_ingredient
 INNER JOIN potion p ON c.id_potion = p.id_potion
-WHERE p.nom_potion = 'Santé';
+WHERE p.nom_potion = 'Santé'
+GROUP BY i.nom_ingredient
+HAVING cout
 
-8) SELECT p.nom_personnage, b.nom_bataille FROM personnage p
+8) SELECT ANY_VALUE(p.nom_personnage), b.nom_bataille, SUM(pc.qte) AS casques FROM personnage p
 INNER JOIN prendre_casque pc ON p.id_personnage = pc.id_personnage
 INNER JOIN bataille b ON pc.id_bataille = b.id_bataille
-WHERE b.nom_bataille = 'Bataille du village gaulois';
+WHERE b.nom_bataille = 'Bataille du village gaulois'
+GROUP BY p.nom_personnage
+HAVING casques
 
-9) SELECT p.nom_personnage, b.dose_boire FROM boire b
+9) SELECT p.nom_personnage, SUM(b.dose_boire) AS bu FROM boire b
 INNER JOIN personnage p ON b.id_personnage = p.id_personnage
-ORDER BY b.dose_boire ASC;
+GROUP BY p.nom_personnage
+HAVING bu
+ORDER BY bu DESC
 
-10) SELECT MAX(pc.qte) FROM prendre_casque
-INNER JOIN bataille b ON pc.id_bataille = b.id_bataille;
+10) SELECT ANY_VALUE(b.nom_bataille), SUM(pc.qte) AS cp FROM prendre_casque pc
+INNER JOIN bataille b ON pc.id_bataille = b.id_bataille
+GROUP BY b.nom_bataille
+HAVING cp
+ORDER BY cp DESC
+LIMIT 1
 
 11) SELECT COUNT(tc.type_casque), c.cout_casque FROM type_casque tc
 INNER JOIN casque c ON tc.id_type_casque = c.id_type_casque
@@ -45,17 +57,20 @@ INNER JOIN composer c ON p.id_potion = c.id_potion
 INNER JOIN ingredient i ON c.id_ingredient = i.id_ingredient
 WHERE i.nom_ingredient = 'poisson frais';
 
-13) SELECT COUNT(*) FROM personnage p
+13) SELECT COUNT(*) AS persos FROM personnage p
 INNER JOIN lieu l ON p.id_lieu = l.id_lieu
-ORDER BY COUNT(*) LIMIT 5 WHERE l.nom_lieu <> 'village gaulois';
+WHERE l.nom_lieu != 'village gaulois'
+ORDER BY persos
+LIMIT 5
 
 14) SELECT p.nom_personnage FROM personnage p
 INNER JOIN boire b ON p.id_personnage = b.id_personnage
-WHERE qte = 0;
+WHERE b.dose_boire = 0;
 
-15) SELECT p.nom_personnage FROM personnage p
-INNER JOIN autoriser_boire ab ON p.id_personnage = ab.id_personnage
-WHERE ab.id_personnage IS NULL;
+15) SELECT nom_personnage FROM personnage p
+LEFT JOIN autoriser_boire ab
+ON ab.id_personnage=p.id_personnage
+WHERE ab.id_personnage IS NULL
 
 B) Modifier
 
