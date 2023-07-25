@@ -75,7 +75,7 @@ WHERE ab.id_personnage IS NULL
 B) Modifier
 
 a) SELECT l.id_lieu AS lieu_id FROM lieu l WHERE nom_lieu = 'Rotonmagus'
-INSERT INTO personnage (nom_personnage, adresse_personnage) VALUES ('Champdeblix', 'ferme Hantassion', lieu_id);
+INSERT INTO personnage (nom_personnage, adresse_personnage, id_lieu) VALUES ('Champdeblix', 'ferme Hantassion', lieu_id);
 
 b) SELECT p.id_personnage AS personnage_id FROM personnage p WHERE nom_personnage = 'Bonemine';
 SELECT po.id_potion AS potion_id FROM potion po WHERE nom_potion = 'Magique';
