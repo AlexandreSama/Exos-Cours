@@ -26,14 +26,28 @@ INNER JOIN composer c ON i.id_ingredient = c.id_ingredient
 INNER JOIN potion p ON c.id_potion = p.id_potion
 WHERE p.nom_potion = 'Santé'
 GROUP BY i.nom_ingredient
-HAVING cout
 
-8) SELECT ANY_VALUE(p.nom_personnage), b.nom_bataille, SUM(pc.qte) AS casques FROM personnage p
-INNER JOIN prendre_casque pc ON p.id_personnage = pc.id_personnage
-INNER JOIN bataille b ON pc.id_bataille = b.id_bataille
-WHERE b.nom_bataille = 'Bataille du village gaulois'
-GROUP BY p.nom_personnage
-HAVING casques
+//Prof : 
+SELECT i.nom_ingredient, SUM(i.cout_ingredient*c.qte) AS cout_ingredient 
+FROM potion p, composer c, ingredient i 
+WHERE p.id_potion = c.id_potion 
+AND c.id_ingredient = i.id_ingredient 
+AND p.nom_potion = 'Santé' 
+GROUP BY i.id_ingredient
+
+8) SELECT p.nom_personnage, SUM(pc.qte) AS nb_casques 
+FROM personnage p, bataille b, prendre_casque pc 
+WHERE p.id_personnage = pc.id_personnage 
+AND pc.id_bataille = b.id_bataille 
+AND b.nom_bataille = 'Bataille du village gaulois' 
+GROUP BY p.id_personnage 
+HAVING nb_casques >= ALL( 
+SELECT SUM(pc.qte) 
+             FROM prendre_casque pc, bataille b 
+             WHERE b.id_bataille = pc.id_bataille 
+             AND b.nom_bataille = 'Bataille du village gaulois' 
+             GROUP BY pc.id_personnage 
+) 
 
 9) SELECT p.nom_personnage, SUM(b.dose_boire) AS bu FROM boire b
 INNER JOIN personnage p ON b.id_personnage = p.id_personnage
@@ -48,54 +62,77 @@ HAVING cp
 ORDER BY cp DESC
 LIMIT 1
 
+//Corrigé : 
+SELECT b.nom_bataille, SUM(pc.qte) AS cp FROM prendre_casque pc
+INNER JOIN bataille b ON pc.id_bataille = b.id_bataille
+GROUP BY b.nom_bataille
+HAVING cp >= ALL(   
+        SELECT SUM(pc.qte) 
+        FROM prendre_casque pc, bataille b 
+        WHERE b.id_bataille = pc.id_bataille 
+        GROUP BY b.nom_bataille 
+) 
+
+
 11) SELECT COUNT(tc.type_casque), c.cout_casque FROM type_casque tc
 INNER JOIN casque c ON tc.id_type_casque = c.id_type_casque
 ORDER BY tc.type_casque, c.cout_casque DESC;
 
+
 12) SELECT p.nom_potion FROM potion p
 INNER JOIN composer c ON p.id_potion = c.id_potion
 INNER JOIN ingredient i ON c.id_ingredient = i.id_ingredient
-WHERE i.nom_ingredient = 'poisson frais';
+WHERE i.nom_ingredient = 'Poisson frais';
 
-13) SELECT COUNT(*) AS persos FROM personnage p
-INNER JOIN lieu l ON p.id_lieu = l.id_lieu
-WHERE l.nom_lieu != 'village gaulois'
-ORDER BY persos
-LIMIT 5
+13) SELECT COUNT(p.id_personnage) AS nb, l.nom_lieu AS ville 
+FROM personnage p, lieu l
+WHERE l.nom_lieu != 'Village gaulois' AND l.id_lieu = p.id_lieu
+GROUP BY p.id_lieu
+HAVING nb >= ALL(
+	SELECT COUNT(p.id_personnage) AS nb
+	FROM personnage p, lieu l
+	WHERE l.nom_lieu != 'Village gaulois' AND l.id_lieu = p.id_lieu
+	GROUP BY p.id_lieu
+)
 
 14) SELECT p.nom_personnage FROM personnage p
 INNER JOIN boire b ON p.id_personnage = b.id_personnage
-WHERE b.dose_boire = 0;
+WHERE b.dose_boire = 0 OR b.dose_boire IS NULL;
 
 15) SELECT nom_personnage FROM personnage p
+SELECT id_potion AS potionID FROM potion
 LEFT JOIN autoriser_boire ab
 ON ab.id_personnage=p.id_personnage
-WHERE ab.id_personnage IS NULL
+WHERE ab.id_personnage IS NULL AND ab.id_potion = id_potion AND nom_potion = 'Magique'
+
+//Corrigé : 
+SELECT p.nom_personnage FROM personnage p
+WHERE p.id_personnage NOT IN (
+	SELECT id_personnage
+	FROM autoriser_boire a, potion pt
+	WHERE pt.id_potion = a.id_potion AND pt.nom_potion = 'Magique'
+)
+
 
 B) Modifier
 
-a) SELECT l.id_lieu AS lieu_id FROM lieu l WHERE nom_lieu = 'Rotonmagus'
-INSERT INTO personnage (nom_personnage, adresse_personnage, id_lieu) VALUES ('Champdeblix', 'ferme Hantassion', lieu_id);
+a) INSERT INTO personnage (nom_personnage, adresse_personnage, id_lieu, id_specialite)
+VALUES ('Champdeblix', 'ferme Hantassion', (SELECT l.id_lieu AS lieu_id FROM lieu l WHERE l.nom_lieu = 'Rotomagus'), (SELECT s.id_specialite FROM specialite s WHERE s.nom_specialite = 'Agriculteur'));
 
-b) SELECT p.id_personnage AS personnage_id FROM personnage p WHERE nom_personnage = 'Bonemine';
-SELECT po.id_potion AS potion_id FROM potion po WHERE nom_potion = 'Magique';
-INSERT INTO autoriser_boire (id_potion, id_personnage) VALUES (personnage_id, potion_id);
+b) INSERT INTO autoriser_boire (id_potion, id_personnage) 
+VALUES ((SELECT p.id_personnage FROM personnage p WHERE p.nom_personnage = 'Bonemine'), (SELECT po.id_potion FROM potion po WHERE nom_potion = 'Magique'));
 
-c) SELECT id_type_casque AS type_casque_id FROM type_casque WHERE nom_type_casque = 'Grec';
-SELECT id_casque AS casque_id FROM casque WHERE id_type_casque = type_casque_id
-DELETE FROM casque WHERE prendre_casque.id_casque = casque_id IS NULL; 
+c) DELETE FROM casque c
+WHERE c.id_casque NOT IN 
+(SELECT id_casque FROM prendre_casque, type_casque
+WHERE c.id_casque)
 
-d) SELECT l.id_lieu AS lieu_id FROM lieu l WHERE nom_lieu = 'Condate';
-UPDATE personnage SET adresse_personnage = 'prison', id_lieu = lieu_id
+d) UPDATE personnage SET adresse_personnage = 'prison', id_lieu = (SELECT l.id_lieu FROM lieu l WHERE nom_lieu = 'Condate')
 WHERE nom_personnage = 'Zérozérosix';
 
-e) SELECT p.id_potion AS potion_id FROM potion p WHERE nom_potion = 'Soupe';
-SELECT i.id_ingredient AS ingredient_id FROM ingredient i WHERE nom_ingredient = 'persil';
-DELETE FROM composer WHERE id_ingredient = ingredient_id AND id_potion = potion_id;
+e)DELETE FROM composer WHERE id_ingredient = (SELECT i.id_ingredient FROM ingredient i WHERE nom_ingredient = 'persil') 
+AND id_potion = (SELECT p.id_potion FROM potion p WHERE nom_potion = 'Soupe');
 
-f) SELECT p.id_personnage AS personnage_id FROM personnage p WHERE nom_personnage = 'Obélix';
-SELECT b.id_bataille AS bataille_id FROM bataille b WHERE nom_bataille = 'Attaque de la banque postale';
-SELECT tc.id_type_casque AS type_casque_id FROM type_casque tc WHERE nom_type_casque = 'Weisenau';
-SELECT c.id_casque AS casque_id FROM casque c WHERE id_type_casque = type_casque_id;
-UPDATE prendre_casque SET id_casque = casque_id, id_type_casque = type_casque_id
-WHERE id_personnage = personnage_id;
+f) UPDATE prendre_casque SET id_casque = 
+(SELECT c.id_casque FROM casque c WHERE id_type_casque = (SELECT tc.id_type_casque FROM type_casque tc WHERE nom_type_casque = 'Weisenau')), id_type_casque = (SELECT tc.id_type_casque FROM type_casque tc WHERE nom_type_casque = 'Weisenau')
+WHERE id_personnage = (SELECT p.id_personnage FROM personnage p WHERE nom_personnage = 'Obélix');
