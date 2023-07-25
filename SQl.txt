@@ -1,0 +1,61 @@
+1) Musicien
+
+a) SELECT r.titre_representation FROM representation r;
+b) SELECT r.titre_representation FROM representation r WHERE lieu = 'Bastille';
+c) SELECT nom, titre_representation FROM musicien INNER JOIN representation ON musicien .representation_id = representation.id_representation;
+d) SELECT titre_representation, lieu, tarif FROM representation INNER JOIN programmer ON representation.id_representation = programmer.representation_id WHERE date = '2014-09-14';
+
+2) Notes
+
+a) SELECT COUNT(*) FROM etudiant;
+b) SELECT MAX(note) FROM evaluer; SELECT MIN(note) FROM evaluer;
+c) CREATE VIEW mem AS SELECT etudiant_id, codemat_id, AVG(note) FROM evaluer GROUP BY etudiant_id, codemat_id;
+d) CREATE VIEW mm AS SELECT codemat_id, AVG(note) FROM evaluer GROUP BY codemat_id;
+e) CREATE VIEW me AS SELECT etudiant_id, AVG(note) FROM evaluer GROUP BY etudiant_id;
+f) CREATE VIEW mp AS SELECT AVG(note) FROM evaluer;
+// g) CREATE VIEW met AS SELECT etudiant_id, AVG(note) FROM evaluer GROUP BY etudiant_id WHERE AVG(note)
+
+3) Articles
+
+a) SELECT noart, libelle FROM article WHERE stock < 10;
+b) SELECT * FROM article WHERE prixinvent > 100 AND prixinvent < 300;
+c) SELECT * FROM fournisseur WHERE adrfour IS NULL;
+d) SELECT * FROM fournisseur WHERE nomfour LIKE 'STE%';
+e) SELECT nomfour, adrfour FROM fournisseur INNER JOIN acheter ON fournisseur.nofour = acheter.nofour# WHERE delai > 20;
+f) SELECT COUNT(*) FROM article;
+g) SELECT SUM(stock * prixinvent) FROM article;
+h) SELECT noart, libelle FROM article ORDER BY stock DESC;
+i) SELECT noart, libelle FROM article ORDER BY SUM(stock * prixinvent), prixinvent, SUM(stock / 2 * prixinvent);
+j) SELECT ANY_VALUE(a.delai) FROM acheter a INNER JOIN article ON a.noart = article.noart HAVING COUNT(*) >= 2;
+
+4) Epreuves
+
+a) SELECT * FROM etudiant;
+b) SELECT * FROM etudiant ORDER BY prenom DESC;
+c) SELECT libelle, SUM(e.coef) / (SELECT SUM(coef) FROM epreuve) FROM epreuve e;
+d) SELECT nom, prenom FROM etudiant;
+e) SELECT nom, prenom FROM etudiant WHERE ville = 'Lyon';
+f) SELECT note FROM notation WHERE note >= 10;
+g) SELECT * FROM epreuve WHERE datepreuve BETWEEN '2014-01-01' AND '2014-06-30';
+h) SELECT nom, prenom, ville FROM etudiant WHERE ville LIKE '%ll%';
+i) SELECT prenom FROM etudiant WHERE nom = 'Dupont' OR 'Durand' OR 'Martin';
+j) SELECT SUM(coef) FROM matiere;
+k) SELECT COUNT(*) FROM epreuve;
+l) SELECT COUNT(*) FROM notation WHERE note IS NULL;
+m) SELECT * FROM epreuve INNER JOIN matiere ON epreuve.matcode = matiere.codemat WHERE matiere.libelle IS NOT NULL;
+n) SELECT note, nom, prenom FROM notation INNER JOIN etudiant ON notation.etunum = etudiant.numetu;
+o) SELECT note, nom, prenom, libelle FROM notation 
+INNER JOIN etudiant ON notation.etunum = etudiant.numetu 
+INNER JOIN epreuve ON notation.epreuvenum = epreuve.numepreuve
+INNER JOIN matiere ON epreuve.matcode = matiere.codemat;
+p) SELECT note, nom, prenom FROM notation INNER JOIN etudiant ON notation.etunum = etudiant.numetu WHERE note = 20;
+q) SELECT AVG(note), nom, prenom FROM notation INNER JOIN etudiant ON notation.etunum = etudiant.numetu;
+r) SELECT AVG(note), nom, prenom FROM notation INNER JOIN etudiant ON notation.etunum = etudiant.numetu ORDER BY AVG(note) ASC;
+s) SELECT AVG(note), libelle FROM notation INNER JOIN epreuve ON notation.epreuvenum = epreuve.numepreuve WHERE COUNT(epreuvenum) > 1;
+t) 
+
+5) Livraisons
+
+a) INSERT INTO fournisseur (nomF, status, villeF) VALUES ("Sucriere", 1, "Erstein");
+b) DELETE FROM produit WHERE couleur = 'Noir' AND numP > 100 AND numP < 1999;
+c) UPDATE fournisseur SET villeF = 'Mulhouse' WHERE numF = 3;
