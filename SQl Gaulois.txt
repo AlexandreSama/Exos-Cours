@@ -8,18 +8,46 @@ A) Requêtes
 INNER JOIN lieu l ON p.id_lieu = l.id_lieu
 INNER JOIN specialite s ON p.id_specialite = s.id_specialite ORDER BY l, p.nom_personnage;
 
-4) SELECT COUNT(*) FROM personnage p
-INNER JOIN specialite s ON p.id_specialite = s.id_specialite ORDER BY COUNT(p.id_personnage) DESC;
+4) SELECT s.nom_specialite, COUNT(p.id_personnage) 
+FROM specialite s 
+LEFT OUTER JOIN personnage p ON s.id_specialite = p.id_specialite 
+GROUP BY s.nom_specialite 
+ORDER BY COUNT(p.id_personnage) DESC; 
 
 5) SELECT b.nom_bataille, DATE_FORMAT(b.date_bataille, '%e/%m/%y'), l.nom_lieu FROM bataille
 b INNER JOIN lieu l ON b.id_lieu = l.id_lieu ORDER BY date_bataille ASC;
 
 6) SELECT p.nom_potion, SUM(c.qte * i.cout_ingredient) AS cout FROM potion p
-INNER JOIN composer c ON p.id_potion = c.id_potion
-INNER JOIN ingredient i ON c.id_ingredient = i.id_ingredient
+LEFT OUTER JOIN composer c ON p.id_potion = c.id_potion
+LEFT OUTER JOIN ingredient i ON c.id_ingredient = i.id_ingredient
 GROUP BY p.nom_potion
-HAVING cout
+HAVING cout <= 10 OR cout IS NULL
 ORDER BY cout DESC
+
+//Corrigé : 
+SELECT
+    p.nom_potion,
+    SUM(i.cout_ingredient * c.qte) AS cout_potion
+FROM
+    potion p
+    LEFT OUTER JOIN composer c
+        ON c.id_potion = p.id_potion
+    LEFT OUTER JOIN ingredient i
+        ON c.id_ingredient = i.id_ingredient
+GROUP BY
+    p.id_potion
+ORDER BY
+    cout_potion DESC
+;
+
+//En plus : 
+SELECT p.nom_potion, IFNULL(SUM(c.qte * i.cout_ingredient), 0) AS cout FROM potion p
+LEFT OUTER JOIN composer c ON p.id_potion = c.id_potion
+LEFT OUTER JOIN ingredient i ON c.id_ingredient = i.id_ingredient
+GROUP BY p.nom_potion
+ORDER BY cout DESC;
+
+ 
 
 7) SELECT ANY_VALUE(i.nom_ingredient), SUM(c.qte * i.cout_ingredient) AS cout, ANY_VALUE(c.qte), p.nom_potion FROM ingredient i
 INNER JOIN composer c ON i.id_ingredient = c.id_ingredient
